@@ -139,6 +139,8 @@ a{color:var(--accent)}
 .row{display:flex;gap:10px;flex-wrap:wrap}
 .row button{flex:1}
 footer{text-align:center;margin-top:12px}
+.credit{font-size:14px;margin:6px 0 0}
+.credit a{font-weight:700;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 footer button{background:none;color:var(--muted);font-weight:600;font-size:13px;padding:6px}
 .toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;z-index:20}
 
@@ -287,7 +289,7 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
     </div>
   </section>
 
-  <footer><p class="muted small">כל הציטוטים אמיתיים, ולכל אחד יש קישור למקור.</p><button id="bAdmin">ניהול</button></footer>
+  <footer><p class="muted small">כל הציטוטים אמיתיים, ולכל אחד יש קישור למקור.</p><p class="credit">נוצר ע״י <a href="https://wa.me/972526642066?text=%D7%A9%D7%99%D7%97%D7%A7%D7%AA%D7%99%20%D7%91%22%D7%A7%D7%95%D7%90%D7%9C%D7%99%D7%A6%D7%99%D7%94%20%D7%A2%D7%99%D7%95%D7%95%D7%A8%D7%AA%22.%20%D7%90%D7%99%D7%96%D7%94%20%D7%9E%D7%92%D7%A0%D7%99%D7%91%20%D7%96%D7%94%21" target="_blank" rel="noopener">וודי</a></p><button id="bAdmin">ניהול</button></footer>
 </div>
 <div class="toast" id="toast" hidden></div>
 

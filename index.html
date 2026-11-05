@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>קואליציה עיוורת</title>
+<meta name="description" content="11 ציטוטים אמיתיים של ראשי המפלגות, בלי שמות. מכניסים לקואליציה או משאירים בחוץ. מצליחים להגיע ל־61?">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="קואליציה עיוורת">
+<meta property="og:description" content="11 ציטוטים אמיתיים של ראשי המפלגות, בלי שמות. מכניסים לקואליציה או משאירים בחוץ. מצליחים להגיע ל־61?">
+<meta property="og:image" content="https://voody1995.github.io/koalitsia/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2F55C8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='6' width='44' height='52' rx='3' fill='%23fff' stroke='%232F55C8' stroke-width='4'/%3E%3Ctext x='32' y='42' font-size='26' font-weight='800' text-anchor='middle' fill='%2316213A' font-family='Arial'%3E61%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Assistant:wght@400;600;700;800&family=Frank+Ruhl+Libre:wght@500;700&family=Karantina:wght@700&display=swap">
+<style>
+html{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: one column, a ballot slip (the quote) in the middle of a voting-booth blue ground; the Knesset hemicycle is the payoff */
+:root{
+  --bg:#E9EEF7; --bg2:#DCE3F1; --slip:#FFFFFF; --ink:#16213A; --muted:#5D6880; --line:#C7D0E2;
+  --accent:#2F55C8; --accent-ink:#FFFFFF; --in:#1E8C58; --out:#C9364A; --seat-off:#C3CADA;
+  --display:"Karantina","Assistant",system-ui,sans-serif;
+  --quote:"Frank Ruhl Libre","David","Times New Roman",serif;
+  --body:"Assistant","Arial Hebrew",system-ui,sans-serif;
+  --hand:"Amatic SC","Assistant",cursive;
+  --paper:#FFFFFF; --paper-ink:#111111; --paper-edge:#D3D6DD; --paper-muted:#6B6F78;
+  --shadow:0 10px 30px -12px rgba(22,33,58,.35);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1424; --bg2:#151D33; --slip:#1B2440; --ink:#E7ECF7; --muted:#9AA5BF; --line:#2C3756;
+  --accent:#7F9CFF; --accent-ink:#0E1424; --in:#4CC48A; --out:#F07484; --seat-off:#38425F;
+  --paper:#E9E9E4; --paper-edge:#7D8496; --paper-muted:#5E636D; --shadow:0 10px 30px -12px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1424; --bg2:#151D33; --slip:#1B2440; --ink:#E7ECF7; --muted:#9AA5BF; --line:#2C3756;
+  --accent:#7F9CFF; --accent-ink:#0E1424; --in:#4CC48A; --out:#F07484; --seat-off:#38425F;
+  --paper:#E9E9E4; --paper-edge:#7D8496; --paper-muted:#5E636D; --shadow:0 10px 30px -12px rgba(0,0,0,.7); color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:var(--display);font-weight:700;letter-spacing:.01em;line-height:1;margin:0;text-wrap:balance}
+h1{font-size:clamp(56px,16vw,88px)}
+h2{font-size:40px}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:12px 18px;font-weight:700;color:var(--ink);background:var(--bg2)}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.primary{background:var(--accent);color:var(--accent-ink)}
+.ghost{background:transparent;border:1.5px solid var(--line)}
+a{color:var(--accent)}
+
+/* start */
+.hero{display:flex;flex-direction:column;gap:10px;padding-top:8px}
+.eyebrow{font-size:13px;letter-spacing:.08em;font-weight:700;color:var(--accent)}
+.lead{font-size:18px;max-width:46ch}
+/* ballot tray: real Israeli ballot slips, white paper, heavy letters, party name in small print */
+.tray{background:var(--bg2);border-radius:10px;padding:14px 12px 16px;box-shadow:inset 0 2px 8px rgba(0,0,0,.08)}
+.pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}
+@media (min-width:520px){.pick{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.ballot{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-edge);border-radius:2px;aspect-ratio:5/6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 6px;font-weight:400;
+  box-shadow:0 1px 0 var(--paper-edge),0 6px 14px -8px rgba(0,0,0,.45);transform:rotate(var(--r,0deg));transition:transform .18s ease,box-shadow .18s ease}
+.ballot:hover,.ballot:focus-visible{transform:translateY(-4px) rotate(0deg);box-shadow:0 12px 20px -10px rgba(0,0,0,.5)}
+.ballot .letters{font-family:var(--body);font-weight:800;font-size:clamp(32px,10vw,46px);line-height:.95;letter-spacing:.02em}
+.ballot .pname{font-size:11.5px;line-height:1.25;text-align:center;max-width:16ch}
+.ballot .seats{font-size:10.5px;color:var(--paper-muted);font-variant-numeric:tabular-nums}
+.ballot.blank{border-style:dashed}
+.ballot.blank .letters{font-family:var(--hand);font-weight:700;font-size:clamp(40px,12vw,56px);color:var(--accent)}
+.ballot[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:3px;transform:rotate(0)}
+.others{display:flex;flex-direction:column;gap:10px;margin-top:14px;padding-top:12px;border-top:1.5px dashed var(--line)}
+.others .pick .ballot{aspect-ratio:auto;min-height:96px}
+.none{background:transparent;border:1.5px solid var(--line);width:100%;margin-top:12px;font-weight:600}
+.rules{display:flex;flex-direction:column;gap:6px;font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+
+/* game */
+.bar{display:flex;align-items:center;gap:12px}
+.bar .step{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.meter{flex:1;display:flex;flex-direction:column;gap:4px}
+.meter .lbl{display:flex;justify-content:space-between;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.track{position:relative;height:10px;background:var(--bg2);border-radius:6px;overflow:hidden}
+.track .fill{position:absolute;inset:0 0 0 auto;width:0;background:var(--accent);transition:width .5s ease}
+.track .goal{position:absolute;top:-3px;bottom:-3px;right:50.83%;width:2px;background:var(--ink);opacity:.5}
+
+.stage{position:relative;touch-action:pan-y}
+.slip{position:relative;background:var(--slip);border-radius:6px;box-shadow:var(--shadow);padding:28px 24px 22px;
+  border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.3,1);user-select:none;-webkit-user-select:none}
+.slip::before{content:"";position:absolute;inset:8px;border:1.5px dashed var(--line);border-radius:3px;pointer-events:none}
+.slip .num{font-size:12px;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.slip blockquote{margin:12px 0 0;font-family:var(--quote);font-weight:500;font-size:clamp(21px,5.4vw,26px);line-height:1.45;position:relative}
+.slip blockquote::before{content:"”";font-family:var(--quote);font-size:80px;line-height:0;position:absolute;top:30px;right:-6px;color:var(--accent);opacity:.18}
+.hint{position:absolute;top:18px;font-family:var(--display);font-size:38px;padding:0 12px;border:3px solid;border-radius:6px;opacity:0;transform:rotate(-8deg);pointer-events:none}
+.hint.in{left:18px;color:var(--in);border-color:var(--in)}
+.hint.out{right:18px;color:var(--out);border-color:var(--out);transform:rotate(8deg)}
+.stamp{position:absolute;top:14px;left:14px;font-family:var(--display);font-size:34px;padding:0 12px;border:3px solid;border-radius:6px;transform:rotate(-7deg)}
+.stamp.in{color:var(--in);border-color:var(--in)}
+.stamp.out{color:var(--out);border-color:var(--out)}
+.reveal{margin-top:18px;padding-top:16px;border-top:1.5px solid var(--line);display:flex;flex-direction:column;gap:8px;animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.who{display:flex;align-items:center;gap:12px}
+.badge{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;flex:none}
+.who b{font-size:20px;display:block;line-height:1.2}
+.who span{color:var(--muted);font-size:15px}
+.ctx{font-size:15px}
+.src{font-size:14px;color:var(--muted)}
+.actions{display:flex;gap:10px}
+.actions button{flex:1;padding:15px;font-size:18px}
+.btn-in{background:var(--in);color:#fff}
+.btn-out{background:var(--out);color:#fff}
+.swipehint{text-align:center;font-size:13px;color:var(--muted)}
+
+/* end */
+.result{display:flex;flex-direction:column;gap:14px}
+.hemi{background:var(--slip);border-radius:14px;border:1px solid var(--line);padding:16px 12px 12px;box-shadow:var(--shadow)}
+.hemi svg{display:block;width:100%;height:auto}
+.total{font-family:var(--display);font-size:64px;line-height:1;fill:var(--ink)}
+.total-sub{font-size:13px;fill:var(--muted);font-family:var(--body)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:10px;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.legend .off{color:var(--muted)}
+.punch{font-family:var(--quote);font-size:22px;line-height:1.4}
+.facts{display:flex;flex-direction:column;gap:8px}
+.fact{background:var(--slip);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:16px}
+.picks{display:flex;flex-direction:column;gap:0;background:var(--slip);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.picks div{display:flex;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);font-size:15px}
+.picks div:last-child{border-bottom:0}
+.picks .tag{margin-inline-start:auto;font-weight:700;font-size:13px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row button{flex:1}
+footer{text-align:center;margin-top:12px}
+footer button{background:none;color:var(--muted);font-weight:600;font-size:13px;padding:6px}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;z-index:20}
+
+/* admin */
+.admin{display:flex;flex-direction:column;gap:14px}
+.tabs{display:flex;gap:6px}
+.tabs button{flex:1;background:var(--bg2)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.panel{display:flex;flex-direction:column;gap:12px}
+.note{background:var(--bg2);border-radius:10px;padding:10px 12px;font-size:14px}
+label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}
+input,select,textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--slip);border:1.5px solid var(--line);border-radius:8px;padding:9px 10px}
+textarea{min-height:90px;font-family:var(--quote);font-size:18px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:var(--slip);border:1px solid var(--line);border-radius:12px;padding:14px}
+.form .full{grid-column:1/-1}
+@media (max-width:460px){.form{grid-template-columns:1fr}}
+.qlist{display:flex;flex-direction:column;gap:10px}
+.qitem{background:var(--slip);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.qitem.off{opacity:.55}
+.qitem q{font-family:var(--quote);font-size:17px;quotes:none}
+.qmeta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.pill{font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--bg2);color:var(--ink)}
+.qbtns{display:flex;gap:6px;flex-wrap:wrap}
+.qbtns button{padding:6px 10px;font-size:13px;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.kpi{background:var(--slip);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kpi b{display:block;font-family:var(--display);font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--muted)}
+.tbl{overflow-x:auto;background:var(--slip);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font-size:12px;color:var(--muted);font-weight:700}
+td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
+.cellbar{display:inline-block;height:6px;border-radius:3px;background:var(--accent);vertical-align:middle;margin-inline-start:6px;opacity:.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+</head>
+<body>
+<div class="wrap" dir="rtl">
+
+  <!-- START -->
+  <section id="s-start" class="hero">
+    <div class="eyebrow">הכנסת ה־26 · 120 מנדטים · 11 מפלגות</div>
+    <h1>קואליציה עיוורת</h1>
+    <p class="lead">תקבל 11 ציטוטים אמיתיים של ראשי המפלגות, בלי שמות. על כל ציטוט מחליטים: בפנים או בחוץ. המטרה היא 61.</p>
+    <h2 style="font-size:30px;margin-top:10px">למי הצבעת?</h2>
+    <p class="muted small">בחר את הפתק ששמת במעטפה. התשובה לא נשמרת עם שם, והיא קובעת אילו ציטוטים תקבל.</p>
+    <div class="tray">
+      <div class="pick" id="pick"></div>
+      <div class="others" id="others" hidden>
+        <p class="small" style="font-weight:700">איזו מפלגה? אלה הגדולות שלא עברו את אחוז החסימה:</p>
+        <div class="pick" id="pickOther"></div>
+      </div>
+    </div>
+    <button class="none" id="bNone">לא הצבעתי / לא רוצה לומר</button>
+    <div class="rules">
+      <span>✓ החלק ימינה או לחץ "בפנים" כדי להכניס לקואליציה.</span>
+      <span>✗ החלק שמאלה או לחץ "בחוץ" כדי להשאיר באופוזיציה.</span>
+      <span>אחרי כל החלטה מתגלה מי אמר. אין חרטות.</span>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section id="s-game" hidden>
+    <div class="wrap" style="max-width:none">
+      <div class="bar">
+        <span class="step" id="step">1 / 11</span>
+        <div class="meter">
+          <div class="lbl"><span>הקואליציה שלך</span><span id="count">0 / 61</span></div>
+          <div class="track"><div class="fill" id="fill"></div><div class="goal" title="61"></div></div>
+        </div>
+      </div>
+      <div class="stage" id="stage">
+        <article class="slip" id="slip">
+          <div class="hint in">בפנים</div><div class="hint out">בחוץ</div>
+          <div class="num" id="slipnum">ציטוט</div>
+          <blockquote id="qtext"></blockquote>
+          <div id="revealBox"></div>
+        </article>
+      </div>
+      <div class="actions" id="voteBtns">
+        <button class="btn-out" id="bOut">✗ בחוץ</button>
+        <button class="btn-in" id="bIn">✓ בפנים</button>
+      </div>
+      <div class="actions" id="nextBtns" hidden>
+        <button class="primary" id="bNext">לציטוט הבא ←</button>
+      </div>
+      <p class="swipehint" id="swipehint">אפשר גם להחליק את הפתק ימינה או שמאלה</p>
+    </div>
+  </section>
+
+  <!-- END -->
+  <section id="s-end" class="result" hidden>
+    <div class="eyebrow" id="endEyebrow">התוצאה שלך</div>
+    <h1 id="endTitle" style="font-size:clamp(46px,13vw,72px)"></h1>
+    <div class="hemi">
+      <svg id="hemi" viewBox="0 0 400 222" role="img" aria-label="מליאת הכנסת"></svg>
+      <div class="legend" id="legend"></div>
+    </div>
+    <p class="punch" id="punch"></p>
+    <div class="facts" id="facts"></div>
+    <div class="picks" id="picks"></div>
+    <div class="row">
+      <button class="primary" id="bShare" style="flex-basis:100%">שתף את התוצאה בוואטסאפ</button>
+      <button class="ghost" id="bCopy">העתק</button>
+      <button class="ghost" id="bAgain">שחק שוב</button>
+    </div>
+  </section>
+
+  <!-- ADMIN LOGIN -->
+  <section id="s-login" class="admin" hidden>
+    <h2>מסך ניהול</h2>
+    <label>מייל<input id="email" type="email" dir="ltr" autocomplete="username"></label>
+    <label>סיסמה<input id="pw" type="password" autocomplete="current-password"></label>
+    <p class="muted small" id="pwErr" hidden>המייל או הסיסמה לא נכונים, או שלחשבון הזה אין הרשאת ניהול.</p>
+    <div class="row"><button class="primary" id="bLogin">כניסה</button><button class="ghost" id="bLoginBack">חזרה למשחק</button></div>
+  </section>
+
+  <!-- ADMIN -->
+  <section id="s-admin" class="admin" hidden>
+    <div class="row" style="align-items:center"><h2 style="flex:1">ניהול</h2><button class="ghost" id="bLogout" style="flex:none">התנתקות</button><button class="ghost" id="bAdminBack" style="flex:none">חזרה למשחק</button></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="quotes">ציטוטים</button>
+      <button role="tab" aria-selected="false" data-tab="stats">סטטיסטיקה</button>
+    </div>
+    <div class="panel" id="p-quotes">
+      <div class="note" id="adminNote"></div>
+      <div class="form" id="qform">
+        <label>מפלגה<select id="f-party"></select></label>
+        <label>למי הציטוט "מתאים"<select id="f-appeal"><option value="right">מצביעי גוש נתניהו יסכימו איתו</option><option value="change">מצביעי גוש השינוי יסכימו איתו</option></select></label>
+        <label class="full">הציטוט<textarea id="f-text"></textarea></label>
+        <label class="full">הקשר (מוצג אחרי החשיפה)<input id="f-context"></label>
+        <label>מקור (שם)<input id="f-source" placeholder="למשל: ynet"></label>
+        <label>תאריך<input id="f-date" placeholder="למשל: מאי 2016"></label>
+        <label class="full">קישור למקור<input id="f-url" type="url" dir="ltr"></label>
+        <div class="full row"><button class="primary" id="fSave">הוסף ציטוט</button><button class="ghost" id="fCancel" hidden>ביטול עריכה</button></div>
+      </div>
+      <label>סינון לפי מפלגה<select id="f-filter"></select></label>
+      <div class="qlist" id="qlist"></div>
+    </div>
+    <div class="panel" id="p-stats" hidden>
+      <div id="statsBody"><p class="muted">טוען נתונים…</p></div>
+    </div>
+  </section>
+
+  <footer><p class="muted small">כל הציטוטים אמיתיים, ולכל אחד יש קישור למקור.</p><button id="bAdmin">ניהול</button></footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const PARTIES=[
+ {id:'likud',letters:'מחל',name:'הליכוד',leader:'בנימין נתניהו',seats:27,bloc:'right',color:'#1F4E9E',ab:'בנ'},
+ {id:'yashar',letters:'דרך',name:'ישר!',leader:'גדי איזנקוט',seats:21,bloc:'change',color:'#E8742A',ab:'גא'},
+ {id:'beyachad',letters:'רק',name:'ביחד',leader:'נפתלי בנט',seats:12,bloc:'change',color:'#6A4BC4',ab:'נב'},
+ {id:'joint',letters:'ודם',name:'הרשימה המשותפת',leader:"יוסף ג'בארין",seats:11,bloc:'arab',color:'#2E8B57',ab:'יג'},
+ {id:'democrats',letters:'אמת',name:'הדמוקרטים',leader:'יאיר גולן',seats:8,bloc:'change',color:'#D2364A',ab:'יג'},
+ {id:'raam',letters:'עם',name:'רע"ם',leader:'מנסור עבאס',seats:8,bloc:'arab',color:'#8DB33A',ab:'מע'},
+ {id:'otzma',letters:'ב',name:'עוצמה יהודית',leader:'איתמר בן גביר',seats:7,bloc:'right',color:'#E0B52A',ab:'אב'},
+ {id:'yb',letters:'ל',name:'ישראל ביתנו',leader:'אביגדור ליברמן',seats:7,bloc:'change',color:'#0E7C86',ab:'אל'},
+ {id:'utj',letters:'ג',name:'יהדות התורה',leader:'יעקב אשר',seats:7,bloc:'right',color:'#6B5232',ab:'יא'},
+ {id:'shas',letters:'שס',name:'ש"ס',leader:'אריה דרעי',seats:6,bloc:'right',color:'#8E2C6E',ab:'אד'},
+ {id:'rz',letters:'ט',name:'הציונות הדתית',leader:"בצלאל סמוטריץ'",seats:6,bloc:'right',color:'#A0522D',ab:'בס'}
+];
+const P=Object.fromEntries(PARTIES.map(p=>[p.id,p]));
+const OTHERS=[
+ {id:'reservists',letters:'די',name:'המילואימניקים',full:'המילואימניקים והכלכלית · הנדל וזליכה',bloc:'change'},
+ {id:'amcha',letters:'ך',name:'עמך ישראל',full:'עמך ישראל · עופר וינטר',bloc:'right'},
+ {id:'bluewhite',letters:'כן',name:'כחול לבן',full:'כחול לבן',bloc:'change'},
+ {id:'other',letters:'?',name:'מפלגה אחרת',full:'מפלגה אחרת',bloc:null}
+];
+const OTHER=Object.fromEntries(OTHERS.map(o=>[o.id,o]));
+const BLOC_NAME={right:'גוש נתניהו',change:'גוש השינוי',arab:'המפלגות הערביות'};
+const APPEAL_NAME={right:'מצביעי גוש נתניהו יסכימו',change:'מצביעי גוש השינוי יסכימו'};
+
+/* Starter bank: every quote checked against the linked source. Shortened with "…" where needed. */
+const BUILTIN=[
+ {id:'likud-1',party:'likud',appeal:'change',text:'ראש ממשלה ששקוע עד צוואר בחקירות אין לו מנדט מוסרי וציבורי לקבוע דברים כל כך גורליים למדינת ישראל.',context:'נאמר כשהיה יו"ר האופוזיציה, על ראש הממשלה אהוד אולמרט.',source:'N12 (ציטוט מ־2008)',date:'2008',url:'https://www.mako.co.il/news-military/politics-q3_2017/Article-6e7fc732b9bbd51004.htm'},
+ {id:'likud-2',party:'likud',appeal:'change',text:'ראש הממשלה, אתה היית צריך לבדוק את מוכנות הצבא, הפעלת הצבא, הגנת העורף. גלגול כזה של אחריות לא ראיתי מימיי.',context:'נאום בכנסת אחרי דו"ח וינוגרד על מלחמת לבנון השנייה, מול ראש הממשלה אולמרט.',source:'ynet',date:'2008',url:'https://www.ynet.co.il/article/4928875'},
+ {id:'likud-3',party:'likud',appeal:'change',text:'בואו נתחיל משא ומתן מיד, ללא תנאים מוקדמים… אנו רוצים לחיות עימכם בשלום ובשכנות טובה.',context:'נאום בר־אילן, בפנייה לפלסטינים. באותו נאום הביע נכונות למדינה פלסטינית מפורזת.',source:'ynet',date:'יוני 2009',url:'https://www.ynet.co.il/news/article/hkcsa6511o'},
+ {id:'likud-4',party:'likud',appeal:'right',text:'במשך שנים מנעתי את הקמתה של מדינת טרור זו… הכפלנו את ההתיישבות היהודית ביהודה ושומרון – ונמשיך בדרך זו.',context:'תגובה להכרה של בריטניה, קנדה ואוסטרליה במדינה פלסטינית.',source:'ערוץ 7',date:'ספטמבר 2025',url:'https://www.inn.co.il/news/679428'},
+
+ {id:'yashar-1',party:'yashar',appeal:'right',text:'כל כפר שיירו ממנו לעבר ישראל, נפעיל עליו כוח לא פרופורציונלי ונגרום הרס אדיר.',context:'"דוקטרינת הדאחייה", שהציג כאלוף פיקוד צפון.',source:'המכלול',date:'2008',url:'https://www.hamichlol.org.il/%D7%93%D7%95%D7%A7%D7%98%D7%A8%D7%99%D7%A0%D7%AA_%D7%94%D7%93%D7%90%D7%97%D7%99%D7%99%D7%94'},
+ {id:'yashar-2',party:'yashar',appeal:'change',text:'צריך לומר באומץ שאי אפשר להחזיר אותם שלא דרך עסקה.',context:'על החטופים, בראיון ל"עובדה" כשהיה חבר קבינט המלחמה.',source:'N12 / עובדה',date:'ינואר 2024',url:'https://www.mako.co.il/news-military/2024_q1/Article-295bc9d361e1d81026.htm'},
+ {id:'yashar-3',party:'yashar',appeal:'change',text:'מי שאומר שיש הכרעה מוחלטת… לא אומר את האמת. ולכן צריכים לא לספר סיפורי אלף לילה ולילה.',context:'על מטרות המלחמה בעזה, בראיון ל"עובדה".',source:'ice',date:'ינואר 2024',url:'https://www.ice.co.il/media/news/article/996834'},
+
+ {id:'beyachad-1',party:'beyachad',appeal:'right',text:'אני לא מוסר סנטימטר אדמה מארץ ישראל לערבים, אני לא מקים מדינה פלסטינית, ואני ממשיך ליישב את יהודה ושומרון.',context:'בראיון ל־i24NEWS, ימים לפני הבחירות.',source:'i24NEWS',date:'אוקטובר 2026',url:'https://www.i24news.tv/he/news/israel-elections-2026/artc-30d35e3a'},
+ {id:'beyachad-2',party:'beyachad',appeal:'right',text:'אם יש משהו שהפלסטינים עשו בשנים האחרונות זה להוכיח שהם לא ראויים למדינה.',context:'בנאום בכנס, כיו"ר הבית היהודי.',source:'מקור ראשון / nrg',date:'2015',url:'https://www.makorrishon.co.il/nrg/online/1/ART2/660/802.html'},
+ {id:'beyachad-3',party:'beyachad',appeal:'change',text:'גיליתי מנהיג אמיץ, בערך בגילי, שהתגלה כמענטש… הוכחנו שאנשים עם דעות פוליטיות שונות בתכלית יכולים לעבוד ביחד.',context:'על מנסור עבאס, יו"ר רע"ם, במאמר ב"ניו יורק טיימס".',source:'מעריב',date:'2023',url:'https://www.maariv.co.il/news/politics/Article-961388'},
+
+ {id:'joint-1',party:'joint',appeal:'change',text:'התוכנית המדינית שלנו זו הקמת מדינה פלסטינית בגבולות 67\'. הקמת מדינה פלסטינית לצד מדינת ישראל שתחיה כמובן בשלום איתה.',context:'בראיון ל־103FM, כשהציג את הדרישות לתמיכה בממשלה הבאה.',source:'מעריב / 103FM',date:'אוקטובר 2026',url:'https://www.maariv.co.il/news/politics/article-1376561'},
+ {id:'joint-2',party:'joint',appeal:'right',text:'אנחנו דורשים תוכנית מקיפה, מתוקצבת וממשית להיאבק בארגוני הפשיעה… אין תמיכה אוטומטית, אנחנו לא מציעים צ\'ק פתוח לאף גורם ובטח לא להנהגת האופוזיציה.',context:'באותו ראיון, על התנאים לשיתוף פעולה אחרי הבחירות.',source:'מעריב / 103FM',date:'אוקטובר 2026',url:'https://www.maariv.co.il/news/politics/article-1376561'},
+
+ {id:'democrats-1',party:'democrats',appeal:'right',text:'מי שרוצה לשבור את כוחו של חמאס צריך להיכנס קרקעית לעזה… מדינה רצינית לא יכולה לבחור בהפקרת תושביה, אנחנו מפקירים את תושבי הדרום.',context:'בראיון על המדיניות מול חמאס, לפני מלחמת 7 באוקטובר.',source:'מעריב',date:'',url:'https://www.maariv.co.il/news/israel/Article-841701'},
+ {id:'democrats-2',party:'democrats',appeal:'right',text:'ישראל היא קו החזית של הגוש הדמוקרטי הליברלי הבינלאומי מול מרבית האלמנטים הג\'יהאדיסטיים הדתיים הפנאטיים בעולם.',context:'בראיון לכריסטיאן אמנפור ב־CNN.',source:'ערוץ 7',date:'2024',url:'https://www.inn.co.il/news/640738'},
+ {id:'democrats-3',party:'democrats',appeal:'change',text:'אם יש משהו שמפחיד אותי בזיכרון השואה, הוא זיהוי תהליכים מעוררי חלחלה שהתרחשו באירופה בכלל, ובגרמניה בפרט… ומציאת עדות להם כאן בקרבנו.',context:'"נאום התהליכים" בטקס יום השואה, כשהיה סגן הרמטכ"ל.',source:'ערוץ 7',date:'מאי 2016',url:'https://www.inn.co.il/news/380047'},
+
+ {id:'raam-1',party:'raam',appeal:'right',text:'מדינת ישראל היא מדינה יהודית וככה היא תישאר. השאלה היא מה המעמד של אזרח ערבי.',context:'בכנס "גלובס" לעסקים, כשהיה חלק מממשלת בנט–לפיד. הדברים עוררו סערה בחברה הערבית.',source:'סרוגים / גלובס',date:'דצמבר 2021',url:'https://www.srugim.co.il/629877'},
+ {id:'raam-2',party:'raam',appeal:'change',text:'קורא להנהגת כל הפלגים הפלסטינים להוכיח עמדה אנושית ערכית… ולשחרר לאלתר את כל החטופים, בני הערובה והשבויים.',context:'בראיון לכאן חדשות, בזמן המלחמה בעזה.',source:'כאן חדשות',date:'',url:'https://www.kan.org.il/561075'},
+
+ {id:'otzma-1',party:'otzma',appeal:'right',text:'מי שטבח, רצח ואנס יהודים לא יזכה לחיות את חייו על חשבון אזרחי ישראל.',context:'על חוק עונש מוות למחבלים, בביקור בתאו של אייכמן.',source:'JDN',date:'2026',url:'https://www.jdn.co.il/news/2662735/'},
+ {id:'otzma-2',party:'otzma',appeal:'change',text:'במקום להנחית על חמאס מכה קשה – נתניהו ממשיך במדיניות החלשה והמתפרסת שלו. שוב הוא מלמד את החמאס שהטרור משתלם… סיפורי הסבתא לפיהם החמאס מורתע כבר לא עושים רושם על אף אחד.',context:'על העברת הכסף הקטארי לעזה, שנים לפני 7 באוקטובר.',source:'סרוגים',date:'',url:'https://www.srugim.co.il/349340'},
+
+ {id:'yb-1',party:'yb',appeal:'right',text:'מי שרוצה להכריע טרור לא מממן אותו במקביל… צה"ל פועל ברצועה עם פינצטה במקום לעבוד עם גרזן.',context:'על הסיוע ההומניטרי לעזה ועל ניהול המלחמה.',source:'JDN / ynet',date:'2025',url:'https://www.jdn.co.il/news/2466320/'},
+ {id:'yb-2',party:'yb',appeal:'change',text:'מדובר בכוחנות, בבריונות ובכפייה דתית.',context:'על ביטול נסיעות אוטובוס שפעלו לפני צאת השבת, כשסמוטריץ\' היה שר התחבורה.',source:'מעריב',date:'',url:'https://www.maariv.co.il/news/politics/Article-741606'},
+ {id:'yb-3',party:'yb',appeal:'change',text:'ישראל ביתנו תמכה ותומכת בנישואים אזרחיים לכלל האוכלוסייה.',context:'במכתב לאגודה למען הלהט"ב.',source:'N12',date:'2019',url:'https://www.mako.co.il/news-israel-elections/elections_2019-q3_2019/Article-1f0da23cb69bc61027.htm'},
+
+ {id:'utj-1',party:'utj',appeal:'change',text:'אנחנו דורשים, רוצים ותומכים להחזיר את כולם כמה שיותר מהר… לצערי יש אנשים במערכת הפוליטית שעושים פוליטיקה צינית.',context:'על עסקת החטופים, אחרי רצח ששת החטופים במנהרה ברפיח.',source:'JDN',date:'ספטמבר 2024',url:'https://www.jdn.co.il/video/2260515/'},
+ {id:'utj-2',party:'utj',appeal:'right',text:'שנים לא מעטות אנחנו יחד עם הליכוד, וגם כרגע… מבחינתנו הליכוד זה הכוח הימני המוביל.',context:'בראיון בערוץ הכנסת, כשנשאל על הצהרת נאמנות לנתניהו.',source:'בחדרי חרדים',date:'ינואר 2021',url:'https://www.bhol.co.il/news/1171743'},
+
+ {id:'shas-1',party:'shas',appeal:'change',text:'תנועת ש"ס… תתמוך בכל עסקה שתובא לאישור הממשלה… פדיון שבויים היא מן המצוות החשובות ביותר ביהדות.',context:'בישיבת הסיעה, על עסקת החטופים.',source:'JDN',date:'ינואר 2025',url:'https://www.jdn.co.il/news/2337457/'},
+ {id:'shas-2',party:'shas',appeal:'right',text:'יסגרו לנו את הדלת, ניכנס דרך החלון. יסגרו לנו את החלון – נפרוץ את התקרה.',context:'אחרי שבג"ץ פסל את מינויו לשר.',source:'וואלה',date:'ינואר 2023',url:'https://news.walla.co.il/item/3552631'},
+
+ {id:'rz-1',party:'rz',appeal:'right',text:'אין דבר כזה עם פלסטיני. יש דבר כזה היסטוריה פלסטינית? ממציאים עם פיקטיבי.',context:'בנאום בפריז, כשר האוצר.',source:'כאן חדשות',date:'מרץ 2023',url:'https://www.kan.org.il/content/kan-news/politic/218671/'},
+ {id:'rz-2',party:'rz',appeal:'change',text:'אחיי היהודים. הגנה עצמית מול טרור ופורעים כן, אלימות יזומה והרס רכוש בשום אופן לא!! חדל! אנחנו לא כמוהם.',context:'בזמן המהומות בערים המעורבות, אחרי שיהודים תקפו עסקים של ערבים בבת ים.',source:'כיפה',date:'מאי 2021',url:'https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1110569'},
+ {id:'rz-3',party:'rz',appeal:'change',text:'מסתייגים בתוקף מכל גילוי של אלימות עבריינית אנרכיסטית מסוכנת שאין לה דבר וחצי דבר עם אהבת הארץ וההתיישבות בה.',context:'אחרי פרעות של מתנחלים בכפר ג\'ית.',source:'ice',date:'2024',url:'https://www.ice.co.il/local-news/news/article/1025601'}
+ ,
+ {id:'likud-5',party:'likud',appeal:'right',text:'אנחנו בדרך לניצחון מוחלט, זה בהישג יד… המשך הלחץ הצבאי זו הדרך לשחרור החטופים ולא כניעה לחמאס שתזמין טבח נוסף.',context:'במסיבת עיתונאים בירושלים, בזמן ביקור מזכיר המדינה האמריקני בלינקן.',source:'מעריב',date:'פברואר 2024',url:'https://www.maariv.co.il/news/politics/Article-1074444'},
+ {id:'yashar-4',party:'yashar',appeal:'right',text:'אין מדינה פלסטינית, ובממשלה שנקים לא תקום מדינה פלסטינית.',context:'בתגובה למנסור עבאס, שאמר שמדינת פלסטין קיימת וצריך להכיר בה.',source:'מעריב',date:'אוגוסט 2026',url:'https://maariv.co.il/news/politics/article-1358508'},
+ {id:'beyachad-4',party:'beyachad',appeal:'change',text:'נתניהו חייב ללכת הביתה… נתניהו נושא באחריות אישית, אישית ישירה לטבח השבעה באוקטובר.',context:'בראיון ל־i24NEWS, ימים לפני הבחירות.',source:'i24NEWS',date:'אוקטובר 2026',url:'https://www.i24news.tv/he/news/israel-elections-2026/artc-30d35e3a'},
+ {id:'joint-3',party:'joint',appeal:'change',text:'אני מאשים אותם כי כנראה נוח להם עם תמונת המצב הזו, שהציבור הערבי שקוע בדם ולא מוצא זמן להתפנות לנושאים הפוליטיים.',context:'על הממשלה והמשטרה, אחרי גל רציחות בחברה הערבית.',source:'N12',date:'2026',url:'https://www.mako.co.il/news-israel-elections/2026/Article-e81970c300e5e91027.htm'},
+ {id:'democrats-4',party:'democrats',appeal:'change',text:'הבוקר זה איימן, מחרתיים – אתם.',context:'על הליך ההדחה מהכנסת נגד ח"כ איימן עודה, שהשווה בין מחבלים לחטופים. גולן התנגד להדחה.',source:'JDN',date:'2025',url:'https://www.jdn.co.il/news/2435762/'},
+ {id:'raam-3',party:'raam',appeal:'change',text:'נתניהו ממשיך לפגוע בדמוקרטיה הישראלית למען טובתו האישית.',context:'אחרי שנתניהו רמז על הוצאת רע"ם מחוץ לחוק.',source:'JDN',date:'נובמבר 2025',url:'https://www.jdn.co.il/news/2524307/'},
+ {id:'otzma-3',party:'otzma',appeal:'change',text:'מבין את הכאב אבל אסור לנו לקחת את החוק לידיים. מי שצריך לטפל בטרור ולהרתיע אותו זו ממשלת ישראל ולא אזרחים.',context:'על הפרעות בחווארה, יום אחרי הפיגוע שבו נרצחו האחים הלל ויגל יניב.',source:'סרוגים',date:'פברואר 2023',url:'https://www.srugim.co.il/768488'},
+ {id:'yb-4',party:'yb',appeal:'right',text:'מה שמטריד אותי מאוד היום הוא שבמקום להרתיע את המחבלים אנחנו מרתיעים את חיילי צה"ל.',context:'באירוע "שבת תרבות" בבאר שבע.',source:'וואלה',date:'יולי 2015',url:'https://www.walla.co.il/news/israel/2869580'},
+ {id:'yb-5',party:'yb',appeal:'change',text:'כשהוא פיזר את הכנסת ידענו שהוא סגר עם המפלגות החרדיות, הוא מכר להם הכול.',context:'על נתניהו, באותו אירוע.',source:'וואלה',date:'יולי 2015',url:'https://www.walla.co.il/news/israel/2869580'},
+ {id:'shas-3',party:'shas',appeal:'change',text:'ברור שהמחאה נתנה לנו תמונת מבט אחרת. הכי קל זה להגיד "יש לי רוב ואני מצביע". מי שיש לו אחריות חייב להסתכל על כל התמונה.',context:'על המחאה נגד המהפכה המשפטית, בראיון לכיכר השבת.',source:'וואלה',date:'ספטמבר 2023',url:'https://www.walla.co.il/news/politics/3609456'},
+ {id:"likud-6",party:"likud",appeal:"change",text:"העם הפלסטיני הוא עם רווי סבל, תסכול ויאוש. עלינו להבין את הסבל הזה ולנסות למצוא לו מזור.",context:"בכהונתו הראשונה כראש ממשלה, בדברים לוועדת העורכים.",source:"וואלה",date:"נובמבר 1997",url:"https://news.walla.co.il/item/1502416"},
+ {id:"likud-7",party:"likud",appeal:"change",text:"אנחנו מתנגדים להגדרת האיסלם כאויב החדש של ישראל והמערב… אין לנו סכסוך עם האיסלם.",context:"בנאום השבעת ממשלתו הראשונה בכנסת.",source:"וואלה",date:"יוני 1996",url:"https://news.walla.co.il/item/1502416"},
+ {id:"yashar-5",party:"yashar",appeal:"change",text:"כל מי שיבטיח לאזרחי ישראל ניצחון מוחלט… הוא זורע אשליה.",context:"בתוכנית ״פגוש את העיתונות״, שלושה ימים לפני הבחירות.",source:"N12",date:"אוקטובר 2026",url:"https://www.mako.co.il/news-israel-elections/2026/liveblog-be85d8f1b3e61a1026.htm"},
+ {id:"beyachad-5",party:"beyachad",appeal:"change",text:"אני בעד זכויות מלאות ללהט״בים במדינת ישראל.",context:"בתוכנית ״פגוש את העיתונות״, שלושה ימים לפני הבחירות.",source:"N12",date:"אוקטובר 2026",url:"https://www.mako.co.il/news-israel-elections/2026/liveblog-be85d8f1b3e61a1026.htm"},
+ {id:"beyachad-6",party:"beyachad",appeal:"change",text:"מי שלא מתגייס לא יקבל שקל ממדינת ישראל.",context:"על גיוס חרדים, בתוכנית ״פגוש את העיתונות״.",source:"N12",date:"אוקטובר 2026",url:"https://www.mako.co.il/news-israel-elections/2026/liveblog-be85d8f1b3e61a1026.htm"},
+ {id:"joint-4",party:"joint",appeal:"right",text:"אנחנו בעמדה ערכית נגד פגיעה באזרחים – בין אם מדובר ביהודי, בערבי או בפלסטיני… באותו יום, לא רק שגינינו והתנגדנו, אלא אמרנו במפורש שאלה זוועות שאי־אפשר לקבל.",context:"על 7 באוקטובר, בכנס של ynet ו״ידיעות אחרונות״. באותו כנס סירב לכנות את חמאס ארגון טרור.",source:"ynet",date:"אוקטובר 2026",url:"https://www.ynet.co.il/news/elections2026/article/hk6wt4siml"},
+ {id:"democrats-5",party:"democrats",appeal:"right",text:"הפרטנרים הראויים לכל ממשלה עתידית זה מי שמכיר בכך שמדינת ישראל היא ביתו הלאומי של העם היהודי.",context:"כשנשאל על שותפות עם רע״ם, בתוכנית ״פגוש את העיתונות״.",source:"N12",date:"אוקטובר 2026",url:"https://www.mako.co.il/news-israel-elections/2026/liveblog-be85d8f1b3e61a1026.htm"},
+ {id:"raam-4",party:"raam",appeal:"right",text:"יש לזה צורך הכרחי בחברה הערבית… קידום מתווה שירות אזרחי יענה על הצרכים של הצעירים הערבים ועל הציפייה הכלל ישראלית.",context:"על שירות לאומי־אזרחי לצעירים ערבים, בכנס הביטחון הלאומי של ״ידיעות אחרונות״.",source:"ynet",date:"יולי 2026",url:"https://www.ynet.co.il/news/article/ryynfpnbgl"},
+ {id:"raam-5",party:"raam",appeal:"right",text:"אנחנו נגנה כל הסתה או הזדהות עם הפשעים האלו… היה לי חשוב לצפות כדי להרגיש את הכאב שכולם מרגישים ושהקורבנות הרגישו.",context:"על טבח 7 באוקטובר, אחרי שצפה בתיעוד שהוצג לחברי הכנסת.",source:"N12",date:"נובמבר 2023",url:"https://www.mako.co.il/news-politics/2023_q4/Article-57454f271e9bb81027.htm"},
+ {id:"otzma-4",party:"otzma",appeal:"right",text:"מטרתה המרכזית של המלחמה היא מיטוט חמאס… הדרך היחידה להכרעה והשבת חטופינו בביטחון היא בכיבוש מלא של הרצועה.",context:"בתגובה לדיווח שנתניהו שוקל לסיים את המלחמה בעזה.",source:"JDN",date:"יולי 2025",url:"https://www.jdn.co.il/news/2438457/"},
+ {id:"utj-3",party:"utj",appeal:"change",text:"אנחנו כרגע בגוש משלנו.",context:"כשנשאל אם יהדות התורה מחויבת לגוש נתניהו, בתוכנית ״פגוש את העיתונות״.",source:"N12",date:"אוקטובר 2026",url:"https://www.mako.co.il/news-israel-elections/2026/liveblog-be85d8f1b3e61a1026.htm"},
+ {id:"utj-4",party:"utj",appeal:"right",text:"מפחדים שאנחנו נכנסים לממשלה וישראל הופכת לאיראן. השתגעתם?… תפסיקו לפחד מהזקן שלנו, מצבע החליפה שלנו.",context:"בראיון, כשהוקמה ממשלת נתניהו השישית.",source:"מעריב",date:"ינואר 2023",url:"https://www.maariv.co.il/news/politics/article-972151"},
+ {id:"shas-4",party:"shas",appeal:"right",text:"אין שום כוח בעולם שיכול להחזיר אותנו בחזרה, עד שלא יקוים ההסכם.",context:"על השארת כוחות צה״ל בלבנון עד שחיזבאללה יפורק מנשקו.",source:"ישראל היום",date:"אפריל 2026",url:"https://www.israelhayom.co.il/magazine/hashavua/article/20290622"},
+ {id:"rz-4",party:"rz",appeal:"right",text:"לא נהיה חלק מעסקת כניעה שתכלול שחרור ארכי־מחבלים, עצירת המלחמה ומסמוס הישגיה שנקנו בדמים מרובים.",context:"על עסקת החטופים, שאותה כינה ״קטסטרופה לביטחון ישראל״.",source:"JDN",date:"ינואר 2025",url:"https://www.jdn.co.il/news/2337457/"},
+ {id:"rz-5",party:"rz",appeal:"change",text:"אני נחוש להביא לשינוי דרמטי בלקיחת האחריות של החרדים על מדינת ישראל… אני דורש תהליך אמיתי שיגייס אלפי חרדים כל שנה לצבא ההגנה לישראל.",context:"על חוק הגיוס, כשר האוצר.",source:"כיכר השבת",date:"דצמבר 2025",url:"https://www.kikar.co.il/haredim-news/haredi-idf-recruitment-smotrich"}
+];
+
+/* Pairs that make the punchline */
+const ODD_PAIRS=[['otzma','raam'],['otzma','joint'],['rz','joint'],['rz','raam'],['otzma','democrats'],['rz','democrats'],['yb','utj'],['yb','shas'],['likud','joint'],['democrats','utj'],['beyachad','joint'],['likud','yashar']];
+
+const $=id=>document.getElementById(id);
+const show=id=>['s-start','s-game','s-end','s-login','s-admin'].forEach(s=>$(s).hidden=(s!==id));
+const toast=t=>{const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2200)};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const other=b=>b==='right'?'change':'right';
+
+/* ---------- database (Supabase) ---------- */
+const SUPABASE_URL='';      // filled in at setup
+const SUPABASE_KEY='';      // public "anon" key — safe to publish; access is enforced by row-level security
+const sb=(SUPABASE_URL&&SUPABASE_KEY&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
+let isAdmin=false;
+const sessionId=(()=>{try{let s=localStorage.getItem('kv_sid');if(!s){s=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('kv_sid',s)}return s}catch{return 'anon'}})();
+let dbQuotes={};           // id -> row (overrides / additions)
+let POOL=BUILTIN.slice();
+function rebuildPool(){
+  const map=Object.fromEntries(BUILTIN.map(q=>[q.id,{...q,builtin:true}]));
+  for(const [id,d] of Object.entries(dbQuotes)){
+    if(d.deleted){delete map[id];continue}
+    map[id]={...(map[id]||{}),...d,id};
+  }
+  POOL=Object.values(map).filter(q=>q.party&&P[q.party]&&q.text);
+  if(!$('s-admin').hidden) renderQList();
+}
+async function loadQuotes(){
+  if(!sb) return;
+  try{
+    const {data,error}=await sb.from('quotes').select('id,party,appeal,text,context,source,date,url,active,deleted');
+    if(error) throw error;
+    dbQuotes={}; (data||[]).forEach(r=>{const o={};for(const [k,v] of Object.entries(r)) if(v!==null) o[k]=v; dbQuotes[r.id]=o});
+    rebuildPool();
+  }catch(e){console.warn('quotes',e)}
+}
+loadQuotes();
+
+/* ---------- start ---------- */
+const state={voted:null,bloc:null,order:[],quotes:{},picks:{},idx:0,decided:false};
+const tilt=i=>[-2.2,1.4,-0.8,2,-1.6,0.9,-2.4,1.8,-1.1,2.3,-0.5,1.2][i%12]+'deg';
+const slipHtml=(o,i,extra='')=>`<button class="ballot ${extra}" style="--r:${tilt(i)}" data-p="${o.id}" aria-label="${esc(o.name)}">
+   <span class="letters">${esc(o.letters||'')}</span><span class="pname">${esc(o.full||o.name)}</span>${o.seats!=null?`<span class="seats">${o.seats} מנדטים</span>`:''}</button>`;
+function renderPick(){
+  $('pick').innerHTML=PARTIES.map((p,i)=>slipHtml({...p,full:p.name+' בראשות '+p.leader},i)).join('')
+   +`<button class="ballot blank" style="--r:${tilt(11)}" id="bOtherSlip" aria-pressed="false" aria-label="מפלגה אחרת"><span class="letters">?</span><span class="pname">פתק לבן<br>מפלגה אחרת</span></button>`;
+  $('pickOther').innerHTML=OTHERS.map((o,i)=>slipHtml(o,i+3,o.id==='other'?'blank':'')).join('');
+  document.querySelectorAll('#pick .ballot[data-p], #pickOther .ballot').forEach(b=>b.onclick=()=>start(b.dataset.p));
+  $('bOtherSlip').onclick=()=>{const open=$('others').hidden; $('others').hidden=!open; $('bOtherSlip').setAttribute('aria-pressed',String(open)); if(open) $('others').scrollIntoView({behavior:'smooth',block:'nearest'})};
+  $('bNone').onclick=()=>start('none');
+}
+const voterOf=id=>P[id]?{name:P[id].name,bloc:P[id].bloc}:(OTHER[id]||null);
+function chooseQuote(pid,bloc){
+  const qs=POOL.filter(q=>q.party===pid&&q.active!==false);
+  if(!qs.length) return null;
+  let want;
+  if(bloc==='right'||bloc==='change'){
+    const surprising = P[pid].bloc===bloc ? other(bloc) : bloc;
+    want = Math.random()<0.7 ? surprising : other(surprising);
+  } else want = Math.random()<0.5?'right':'change';
+  const c=qs.filter(q=>q.appeal===want);
+  const from=c.length?c:qs; return from[Math.floor(Math.random()*from.length)];
+}
+function start(voted){
+  state.voted=voted==='none'?null:voted;
+  state.bloc=state.voted?(voterOf(state.voted)?.bloc||null):null;
+  $('others').hidden=true; $('bOtherSlip')?.setAttribute('aria-pressed','false');
+  state.picks={};state.idx=0;state.quotes={};
+  state.order=shuffle(PARTIES.map(p=>p.id)).filter(pid=>{const q=chooseQuote(pid,state.bloc); if(q) state.quotes[pid]=q; return !!q});
+  show('s-game'); renderCard(); updateMeter();
+  window.scrollTo({top:0});
+}
+
+/* ---------- game ---------- */
+const seatsIn=()=>Object.entries(state.picks).filter(([,v])=>v).reduce((s,[k])=>s+P[k].seats,0);
+function updateMeter(){
+  const n=seatsIn(); $('count').textContent=`${n} / 61`;
+  $('fill').style.width=(n/120*100)+'%';
+  $('fill').style.background= n>=61?'var(--in)':'var(--accent)';
+}
+function renderCard(){
+  const pid=state.order[state.idx], q=state.quotes[pid];
+  state.decided=false;
+  $('step').textContent=`${state.idx+1} / ${state.order.length}`;
+  $('slipnum').textContent=`ציטוט ${state.idx+1}`;
+  $('qtext').textContent=q.text;
+  $('revealBox').innerHTML='';
+  $('slip').querySelector('.stamp')?.remove();
+  $('voteBtns').hidden=false;$('nextBtns').hidden=true;$('swipehint').hidden=false;
+  $('slip').style.transform='';
+}
+function decide(isIn){
+  if(state.decided) return; state.decided=true;
+  const pid=state.order[state.idx], q=state.quotes[pid], p=P[pid];
+  state.picks[pid]=isIn;
+  const slip=$('slip'); slip.style.transform='';
+  slip.querySelectorAll('.hint').forEach(h=>h.style.opacity=0);
+  const st=document.createElement('div'); st.className='stamp '+(isIn?'in':'out'); st.textContent=isIn?'בפנים':'בחוץ'; slip.appendChild(st);
+  $('revealBox').innerHTML=`<div class="reveal">
+    <div class="who"><span class="badge" style="background:${p.color}">${esc(p.ab)}</span><div><b>${esc(q.speaker||p.leader)}</b><span>${esc(p.name)} · ${p.seats} מנדטים</span></div></div>
+    ${q.context?`<p class="ctx">${esc(q.context)}</p>`:''}
+    <p class="src">מקור: ${q.url?`<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.source||'קישור')}</a>`:esc(q.source||'')}${q.date?' · '+esc(q.date):''}</p>
+  </div>`;
+  $('voteBtns').hidden=true;$('nextBtns').hidden=false;$('swipehint').hidden=true;
+  $('bNext').textContent= state.idx===state.order.length-1 ? 'לתוצאה ←' : 'לציטוט הבא ←';
+  updateMeter(); $('bNext').focus({preventScroll:true});
+}
+function next(){ state.idx++; if(state.idx>=state.order.length) finish(); else renderCard(); }
+$('bIn').onclick=()=>decide(true); $('bOut').onclick=()=>decide(false); $('bNext').onclick=next;
+document.addEventListener('keydown',e=>{
+  if($('s-game').hidden||e.target.closest('input,textarea,select')) return;
+  if(!state.decided){ if(e.key==='ArrowRight') decide(true); if(e.key==='ArrowLeft') decide(false); }
+});
+/* swipe */
+(()=>{const slip=$('slip');let x0=null,dx=0,id=null;
+  slip.addEventListener('pointerdown',e=>{if(state.decided||e.target.closest('a'))return;x0=e.clientX;dx=0;id=e.pointerId;slip.setPointerCapture(id);slip.style.transition='none'});
+  slip.addEventListener('pointermove',e=>{if(x0===null)return;dx=e.clientX-x0;slip.style.transform=`translateX(${dx}px) rotate(${dx/22}deg)`;
+    slip.querySelector('.hint.in').style.opacity=Math.max(0,Math.min(1,dx/90));slip.querySelector('.hint.out').style.opacity=Math.max(0,Math.min(1,-dx/90))});
+  const end=()=>{if(x0===null)return;slip.style.transition='';x0=null;
+    if(Math.abs(dx)>90) decide(dx>0); else {slip.style.transform='';slip.querySelectorAll('.hint').forEach(h=>h.style.opacity=0)}};
+  slip.addEventListener('pointerup',end);slip.addEventListener('pointercancel',end);
+})();
+
+/* ---------- end ---------- */
+function hemicycle(inIds){
+  const rows=7, r0=.42, R=188, cx=200, cy=206, total=120;
+  const radii=[...Array(rows)].map((_,i)=>r0+(1-r0)*i/(rows-1));
+  const sum=radii.reduce((a,b)=>a+b,0);
+  let counts=radii.map(r=>Math.round(total*r/sum)); counts[rows-1]+=total-counts.reduce((a,b)=>a+b,0);
+  const seats=[]; radii.forEach((r,i)=>{const n=counts[i];for(let k=0;k<n;k++){const a=Math.PI-(Math.PI*k/(n-1));seats.push({a,x:cx+R*r*Math.cos(a),y:cy-R*r*Math.sin(a)})}});
+  seats.sort((s,t)=>t.a-s.a);
+  const order=[...inIds.sort((a,b)=>P[b].seats-P[a].seats), ...PARTIES.map(p=>p.id).filter(id=>!inIds.includes(id))];
+  const colors=[]; order.forEach(id=>{for(let k=0;k<P[id].seats;k++) colors.push(inIds.includes(id)?P[id].color:'var(--seat-off)')});
+  const rad=R*(1-r0)/(rows-1)*.42;
+  const n=seatsIn();
+  return seats.map((s,i)=>`<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${rad.toFixed(1)}" fill="${colors[i]}"/>`).join('')
+   +`<text x="200" y="196" text-anchor="middle" class="total">${n}</text><text x="200" y="216" text-anchor="middle" class="total-sub">מתוך 120 · דרושים 61</text>`;
+}
+function finish(){
+  const inIds=Object.keys(state.picks).filter(k=>state.picks[k]);
+  const n=seatsIn(), formed=n>=61;
+  $('endTitle').textContent= n===120?'ממשלת אחדות של כולם' : formed?'יש ממשלה!':(n===0?'אף אחד לא נכנס':'אין ממשלה');
+  $('endEyebrow').textContent= formed?`קואליציה של ${n} מנדטים`:`הגעת ל־${n} מנדטים. הולכים לבחירות שוב 🗳️`;
+  $('hemi').innerHTML=hemicycle(inIds.slice());
+  $('legend').innerHTML=PARTIES.map(p=>inIds.includes(p.id)?`<span><i style="background:${p.color}"></i>${esc(p.name)} ${p.seats}</span>`:`<span class="off"><i style="background:var(--seat-off)"></i>${esc(p.name)}</span>`).join('');
+  const odd=ODD_PAIRS.filter(([a,b])=>inIds.includes(a)&&inIds.includes(b));
+  $('punch').textContent= odd.length ? `בממשלה שלך יושבים יחד ${P[odd[0][0]].leader} ו${P[odd[0][1]].leader}.`+(odd[1]?` וגם ${P[odd[1][0]].leader} ו${P[odd[1][1]].leader}.`:'') : (inIds.length?'':'');
+  const facts=[];
+  if(state.voted&&state.bloc){
+    const own=PARTIES.filter(p=>p.bloc===state.bloc), oth=PARTIES.filter(p=>p.bloc!==state.bloc);
+    const ownOut=own.filter(p=>!state.picks[p.id]).length, othIn=oth.filter(p=>state.picks[p.id]).length;
+    const mine=state.picks[state.voted];
+    facts.push(`הצבעת ל${voterOf(state.voted).name}. הכנסת ${othIn} מפלגות מחוץ ל${BLOC_NAME[state.bloc]} ודחית ${ownOut} מתוכו${mine===false?', כולל המפלגה שהצבעת לה':''}.`);
+  }
+  $('facts').innerHTML=facts.map(f=>`<div class="fact">${esc(f)}</div>`).join('');
+  $('picks').innerHTML=state.order.map(pid=>{const p=P[pid],v=state.picks[pid];return `<div><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${p.color};flex:none"></span><span>${esc(p.leader)} · ${esc(p.name)}</span><span class="tag" style="color:${v?'var(--in)':'var(--out)'}">${v?'בפנים':'בחוץ'}</span></div>`}).join('');
+  show('s-end'); window.scrollTo({top:0});
+  saveAndCompare(inIds,n,formed);
+}
+async function saveAndCompare(inIds,n,formed){
+  if(!sb) return;
+  const row={session:sessionId,voted:state.voted||'none',bloc:state.bloc||'none',seats:n,formed,
+    picks:Object.fromEntries(state.order.map(pid=>[pid,{in:!!state.picks[pid],q:state.quotes[pid].id}]))};
+  try{
+    if(state.voted){
+      const {data,error}=await sb.rpc('peer_rates',{p_voted:state.voted});
+      if(!error&&data){
+        const peersN=Math.max(0,...data.map(r=>r.n));
+        if(peersN>=3){
+          let best=null;
+          for(const r of data){ if(!P[r.party]||!(r.party in state.picks)) continue;
+            const diff=Math.abs((state.picks[r.party]?1:0)-Number(r.rate)); if(!best||diff>best.diff) best={pid:r.party,rate:Number(r.rate),diff}; }
+          if(best&&best.diff>=.4){ const pct=Math.round(best.rate*100);
+            const line=`${pct}% ממצביעי ${voterOf(state.voted).name} ששיחקו הכניסו את ${P[best.pid].name}. אתה ${state.picks[best.pid]?'הכנסת':'השארת בחוץ'}.`;
+            $('facts').insertAdjacentHTML('beforeend',`<div class="fact">${esc(line)}</div>`); }
+        }
+      }
+    }
+    await sb.from('plays').insert(row);
+  }catch(e){console.warn('save',e)}
+}
+$('bAgain').onclick=()=>{show('s-start');window.scrollTo({top:0})};
+const SITE_URL=location.origin+location.pathname;
+function shareText(){
+  const inIds=Object.keys(state.picks).filter(k=>state.picks[k]); const n=seatsIn();
+  const odd=ODD_PAIRS.find(([a,b])=>inIds.includes(a)&&inIds.includes(b));
+  return `שיחקתי ב"קואליציה עיוורת": ${n>=61?`הקמתי ממשלה של ${n} מנדטים`:`הגעתי ל־${n} מנדטים בלבד`}${odd?`, ויושבים בה יחד ${P[odd[0]].leader} ו${P[odd[1]].leader}`:''} 😅 מחליטים לפי ציטוטים, בלי לדעת מי אמר. נסו בעצמכם:`;
+}
+$('bShare').onclick=async()=>{
+  const txt=shareText();
+  if(navigator.share){ try{await navigator.share({title:'קואליציה עיוורת',text:txt,url:SITE_URL});return}catch(e){ if(e?.name==='AbortError') return } }
+  window.open('https://wa.me/?text='+encodeURIComponent(txt+' '+SITE_URL),'_blank','noopener');
+};
+$('bCopy').onclick=async()=>{
+  const txt=shareText()+' '+SITE_URL;
+  try{await navigator.clipboard.writeText(txt);toast('הועתק')}catch{
+    const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('הועתק')}catch{toast('לא הצלחתי להעתיק')}ta.remove();}
+};
+
+/* ---------- admin ---------- */
+let editing=null;
+async function checkAdmin(){
+  if(!sb) return false;
+  const {data:{session}}=await sb.auth.getSession(); if(!session) return false;
+  const {data,error}=await sb.rpc('is_admin'); return !error&&data===true;
+}
+$('bAdmin').onclick=async()=>{
+  if(!sb){toast('מסד הנתונים עוד לא מחובר');return}
+  if(await checkAdmin()){isAdmin=true;openAdmin();return}
+  show('s-login');$('pw').value='';$('pwErr').hidden=true;$('email').focus();
+};
+$('bLoginBack').onclick=$('bAdminBack').onclick=()=>show('s-start');
+const tryLogin=async()=>{
+  $('pwErr').hidden=true; $('bLogin').disabled=true;
+  try{
+    const {error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('pw').value});
+    if(error) throw error;
+    isAdmin=await checkAdmin();
+    if(!isAdmin){ await sb.auth.signOut(); throw new Error('no admin') }
+    openAdmin();
+  }catch(e){ $('pwErr').hidden=false }
+  finally{ $('bLogin').disabled=false }
+};
+$('bLogin').onclick=tryLogin; $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin()});
+$('bLogout').onclick=async()=>{await sb.auth.signOut();isAdmin=false;show('s-start');toast('התנתקת')};
+function openAdmin(){
+  show('s-admin');
+  const opts=PARTIES.map(p=>`<option value="${p.id}">${esc(p.name)} · ${esc(p.leader)}</option>`).join('');
+  $('f-party').innerHTML=opts; $('f-filter').innerHTML=`<option value="">כל המפלגות</option>`+opts;
+  $('adminNote').textContent='כל שינוי נשמר מיד ונכנס למשחק לכל השחקנים. ציטוטים כבויים לא יופיעו במשחק.';
+  $('qform').hidden=!isAdmin;
+  loadQuotes(); renderQList(); setTab('quotes');
+}
+const saveQuote=async(id,row)=>{const {error}=await sb.from('quotes').upsert({id,...row,updated_at:new Date().toISOString()}); if(error) throw error; await loadQuotes()};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+function setTab(t){document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===t)));
+  $('p-quotes').hidden=t!=='quotes';$('p-stats').hidden=t!=='stats'; if(t==='stats') renderStats();}
+$('f-filter').onchange=renderQList;
+function renderQList(){
+  const f=$('f-filter').value; const can=sb&&isAdmin;
+  const list=POOL.filter(q=>!f||q.party===f).sort((a,b)=>PARTIES.indexOf(P[a.party])-PARTIES.indexOf(P[b.party]));
+  const counts={}; POOL.filter(q=>q.active!==false).forEach(q=>{counts[q.party]=counts[q.party]||{right:0,change:0};counts[q.party][q.appeal]++});
+  const gaps=PARTIES.filter(p=>!counts[p.id]||!counts[p.id].right||!counts[p.id].change).map(p=>p.name);
+  $('qlist').innerHTML=(gaps.length?`<div class="note">חסר ציטוט מאחד הסוגים אצל: ${esc(gaps.join(', '))}</div>`:'')+list.map(q=>{const p=P[q.party];return `<div class="qitem ${q.active===false?'off':''}">
+    <div class="qmeta"><span class="pill" style="background:${p.color};color:#fff">${esc(p.name)}</span><span class="pill">${esc(APPEAL_NAME[q.appeal]||'')}</span>${q.active===false?'<span class="pill">כבוי</span>':''}${q.builtin&&!dbQuotes[q.id]?'<span>מאגר הפתיחה</span>':''}</div>
+    <q>${esc(q.text)}</q>
+    <div class="qmeta">${esc(q.context||'')}</div>
+    <div class="qmeta">${q.url?`<a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.source||'מקור')}</a>`:esc(q.source||'')}${q.date?' · '+esc(q.date):''}</div>
+    ${can?`<div class="qbtns"><button data-a="edit" data-id="${q.id}">עריכה</button><button data-a="toggle" data-id="${q.id}">${q.active===false?'הפעל':'כבה'}</button><button data-a="del" data-id="${q.id}">מחיקה</button></div>`:''}
+  </div>`}).join('');
+  $('qlist').querySelectorAll('button[data-a]').forEach(b=>b.onclick=()=>qAction(b.dataset.a,b.dataset.id,b));
+}
+const armed={};
+async function qAction(a,id,btn){
+  const q=POOL.find(x=>x.id===id); if(!q) return;
+  try{
+    if(a==='edit'){ editing=id; ['party','appeal','text','context','source','date','url'].forEach(k=>$('f-'+k).value=q[k]||''); $('fSave').textContent='שמור שינויים'; $('fCancel').hidden=false; $('qform').scrollIntoView({behavior:'smooth'}); return }
+    if(a==='toggle'){ await saveQuote(id,stripQ({...q,active:q.active===false})); toast(q.active===false?'הציטוט הופעל':'הציטוט כובה'); return }
+    if(a==='del'){
+      if(!armed[id]){armed[id]=true;btn.textContent='לחץ שוב למחיקה';setTimeout(()=>{armed[id]=false;btn.textContent='מחיקה'},3000);return}
+      if(q.builtin) await saveQuote(id,{...stripQ(q),deleted:true});
+      else { const {error}=await sb.from('quotes').delete().eq('id',id); if(error) throw error; delete dbQuotes[id]; await loadQuotes(); }
+      toast('הציטוט נמחק');
+    }
+  }catch(e){toast('השמירה נכשלה: '+(e?.message||''))}
+}
+const stripQ=q=>({party:q.party,appeal:q.appeal,text:q.text,context:q.context||'',source:q.source||'',date:q.date||'',url:q.url||'',active:q.active!==false,deleted:false});
+$('fCancel').onclick=resetForm;
+function resetForm(){editing=null;['text','context','source','date','url'].forEach(k=>$('f-'+k).value='');$('fSave').textContent='הוסף ציטוט';$('fCancel').hidden=true}
+$('fSave').onclick=async()=>{
+  const d={party:$('f-party').value,appeal:$('f-appeal').value,text:$('f-text').value.trim(),context:$('f-context').value.trim(),source:$('f-source').value.trim(),date:$('f-date').value.trim(),url:$('f-url').value.trim(),active:true};
+  if(!d.text){toast('חסר טקסט לציטוט');return}
+  if(!d.url&&!d.source){toast('הוסף מקור, כדי שאפשר יהיה לבדוק את הציטוט');return}
+  const id=editing||(d.party+'-'+Date.now().toString(36));
+  if(editing){const old=POOL.find(x=>x.id===editing); if(old&&old.active===false) d.active=false;}
+  try{await saveQuote(id,{...d,deleted:false}); toast(editing?'השינויים נשמרו':'הציטוט נוסף'); resetForm()}catch(e){toast('השמירה נכשלה: '+(e?.message||''))}
+};
+
+async function renderStats(){
+  const box=$('statsBody');
+  if(!sb){box.innerHTML='<div class="note">מסד הנתונים עוד לא מחובר, ולכן אין סטטיסטיקה להציג.</div>';return}
+  box.innerHTML='<p class="muted">טוען נתונים…</p>';
+  const games=[];
+  try{
+    for(let from=0;;from+=1000){
+      const {data,error}=await sb.from('plays').select('session,voted,bloc,seats,formed,picks').order('id').range(from,from+999);
+      if(error) throw error; games.push(...data); if(data.length<1000) break;
+    }
+  }catch(e){box.innerHTML='<div class="note">לא הצלחתי לקרוא את הנתונים. נסה להתנתק ולהתחבר שוב.</div>';return}
+  const snap={size:new Set(games.map(g=>g.session)).size};
+  if(!games.length){box.innerHTML='<div class="note">עוד אין משחקים שמורים. אחרי שישחקו, יופיעו כאן כמה שיחקו, כמה הקימו ממשלה, ואיך כל ציטוט התקבל אצל כל גוש.</div>';return}
+  const pct=(a,b)=>b?Math.round(a/b*100):null;
+  const formed=games.filter(g=>g.formed).length, avg=Math.round(games.reduce((s,g)=>s+(g.seats||0),0)/games.length);
+  const blocs=['right','change','none'], bName={right:'גוש נתניהו',change:'גוש השינוי',none:'אחר / לא אמרו',arab:'ערבים'};
+  const cell=v=>v==null?'<td class="muted">—</td>':`<td>${v}%<span class="cellbar" style="width:${Math.max(2,v*.4)}px"></span></td>`;
+  const partyRows=PARTIES.map(p=>{const all=games.filter(g=>g.picks?.[p.id]);
+    return `<tr><td>${esc(p.name)}</td>${cell(pct(all.filter(g=>g.picks[p.id].in).length,all.length))}${blocs.map(b=>{const s=all.filter(g=>(g.bloc==='arab'?'none':g.bloc)===b);return cell(pct(s.filter(g=>g.picks[p.id].in).length,s.length))}).join('')}</tr>`}).join('');
+  const qs={}; games.forEach(g=>Object.entries(g.picks||{}).forEach(([pid,v])=>{const k=v.q;qs[k]=qs[k]||{n:0,in:0,by:{}};qs[k].n++;if(v.in)qs[k].in++;const b=g.bloc==='arab'?'none':g.bloc;qs[k].by[b]=qs[k].by[b]||{n:0,in:0};qs[k].by[b].n++;if(v.in)qs[k].by[b].in++}));
+  const qRows=Object.entries(qs).sort((a,b)=>b[1].n-a[1].n).map(([id,s])=>{const q=POOL.find(x=>x.id===id)||BUILTIN.find(x=>x.id===id);
+    return `<tr><td class="q">${esc(q?q.text.slice(0,90)+(q.text.length>90?'…':''):id)}</td><td>${q?esc(P[q.party].name):''}</td><td>${s.n}</td>${cell(pct(s.in,s.n))}${blocs.slice(0,2).map(b=>cell(s.by[b]?pct(s.by[b].in,s.by[b].n):null)).join('')}</tr>`}).join('');
+  const voters={}; games.forEach(g=>{voters[g.voted]=(voters[g.voted]||0)+1});
+  box.innerHTML=`<div class="kpis">
+     <div class="kpi"><b>${games.length}</b><span>משחקים</span></div>
+     <div class="kpi"><b>${snap.size}</b><span>שחקנים</span></div>
+     <div class="kpi"><b>${pct(formed,games.length)}%</b><span>הקימו ממשלה</span></div>
+     <div class="kpi"><b>${avg}</b><span>מנדטים בממוצע</span></div></div>
+   <h2 style="font-size:28px">כמה הכניסו כל מפלגה</h2>
+   <div class="tbl"><table><thead><tr><th>מפלגה</th><th>כולם</th><th>מצביעי גוש נתניהו</th><th>מצביעי גוש השינוי</th><th>אחר</th></tr></thead><tbody>${partyRows}</tbody></table></div>
+   <h2 style="font-size:28px">איך התקבל כל ציטוט</h2>
+   <div class="tbl"><table><thead><tr><th>ציטוט</th><th>מפלגה</th><th>הוצג</th><th>בפנים</th><th>גוש נתניהו</th><th>גוש השינוי</th></tr></thead><tbody>${qRows}</tbody></table></div>
+   <h2 style="font-size:28px">מי שיחק</h2>
+   <div class="tbl"><table><tbody>${Object.entries(voters).sort((a,b)=>b[1]-a[1]).map(([v,c])=>`<tr><td>${v==='none'?'לא אמרו':esc(voterOf(v)?.name||v)}</td><td>${c}</td></tr>`).join('')}</tbody></table></div>
+   <p class="muted small">"שחקנים" נספרים לפי דפדפן, בלי שמות ובלי פרטים מזהים.</p>`;
+}
+
+renderPick();
+</script>
+</body>
+</html>

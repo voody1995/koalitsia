@@ -318,7 +318,7 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
     </div>
   </section>
 
-  <footer><p class="muted small">כל הציטוטים אמיתיים, ולכל אחד יש קישור למקור.</p><p class="credit">נוצר ע״י <a href="https://wa.me/972526642066?text=%D7%A9%D7%99%D7%97%D7%A7%D7%AA%D7%99%20%D7%91%22%D7%A7%D7%95%D7%90%D7%9C%D7%99%D7%A6%D7%99%D7%94%20%D7%A2%D7%99%D7%95%D7%95%D7%A8%D7%AA%22.%20%D7%90%D7%99%D7%96%D7%94%20%D7%9E%D7%92%D7%A0%D7%99%D7%91%20%D7%96%D7%94%21" target="_blank" rel="noopener">וודי</a></p><button id="bAdmin">ניהול</button></footer>
+  <footer><p class="muted small">כל הציטוטים אמיתיים, ולכל אחד יש קישור למקור.</p><p class="credit">נוצר ע״י <a href="https://wa.me/972526642066?text=%D7%A9%D7%99%D7%97%D7%A7%D7%AA%D7%99%20%D7%91%22%D7%A7%D7%95%D7%90%D7%9C%D7%99%D7%A6%D7%99%D7%94%20%D7%A2%D7%99%D7%95%D7%95%D7%A8%D7%AA%22.%20%D7%90%D7%99%D7%96%D7%94%20%D7%9E%D7%92%D7%A0%D7%99%D7%91%20%D7%96%D7%94%21" target="_blank" rel="noopener">וודי</a></p><p class="small" id="nostatsNote" hidden style="color:var(--out);font-weight:700">מצב בדיקה: משחקים מהדפדפן הזה לא נספרים בסטטיסטיקה. <button id="bStatsOn" style="padding:2px 6px;font-size:13px;text-decoration:underline;background:none;color:inherit">לבטל</button></p><button id="bAdmin">ניהול</button></footer>
 </div>
 <div class="toast" id="toast" hidden></div>
 
@@ -432,6 +432,13 @@ const SUPABASE_KEY='sb_publishable_Bepy_yY5Qu6T952ffX1Osw_1WWzVayk';   // public
 const sb=(SUPABASE_URL&&SUPABASE_KEY&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{db:{schema:'koalitsia'},auth:{storageKey:'koalitsia-auth'}}):null;
 let isAdmin=false;
 const sessionId=(()=>{try{let s=localStorage.getItem('kv_sid');if(!s){s=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('kv_sid',s)}return s}catch{return 'anon'}})();
+/* Test mode: a browser can opt out of statistics (?nostats=1 to turn on, ?nostats=0 to turn off; automatic after admin login) */
+const lsGet=k=>{try{return localStorage.getItem(k)}catch{return null}}, lsSet=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch{}};
+(()=>{const q=new URLSearchParams(location.search).get('nostats'); if(q==='1') lsSet('kv_nostats','1'); if(q==='0') lsSet('kv_nostats',null);
+  if(q!==null){const u=new URL(location.href);u.searchParams.delete('nostats');history.replaceState(null,'',u.pathname+u.search+u.hash)}})();
+let noStats=lsGet('kv_nostats')==='1';
+function setNoStats(on){ lsSet('kv_nostats',on?'1':null); noStats=on; renderNoStats(); }
+function renderNoStats(){ const el=document.getElementById('nostatsNote'); if(el) el.hidden=!noStats; }
 let dbQuotes={};           // id -> row (overrides / additions)
 let POOL=BUILTIN.slice();
 function rebuildPool(){
@@ -596,7 +603,7 @@ async function saveAndCompare(inIds,n,formed){
         }
       }
     }
-    await sb.from('plays').insert(row);
+    if(!noStats) await sb.from('plays').insert(row);
   }catch(e){console.warn('save',e)}
 }
 $('fbSend').onclick=async()=>{
@@ -604,7 +611,7 @@ $('fbSend').onclick=async()=>{
   if(!message){toast('כתוב משהו לפני השליחה');$('fb-msg').focus();return}
   $('fbSend').disabled=true; $('fbErr').hidden=true;
   try{
-    const {error}=await sb.from('feedback').insert({message,name:name||null,voted:state.voted||'none',seats:seatsIn(),session:sessionId});
+    const {error}=await sb.from('feedback').insert({message:noStats?'[בדיקה] '+message:message,name:name||null,voted:state.voted||'none',seats:seatsIn(),session:sessionId});
     if(error) throw error;
     $('fb').hidden=true; $('fbDone').hidden=false;
   }catch(e){ $('fbErr').hidden=false }
@@ -638,7 +645,7 @@ async function checkAdmin(){
 }
 $('bAdmin').onclick=async()=>{
   if(!sb){toast('מסד הנתונים עוד לא מחובר');return}
-  if(await checkAdmin()){isAdmin=true;openAdmin();return}
+  if(await checkAdmin()){isAdmin=true;setNoStats(true);openAdmin();return}
   show('s-login');$('pw').value='';$('pwErr').hidden=true;$('email').focus();
 };
 $('bLoginBack').onclick=$('bAdminBack').onclick=()=>show('s-start');
@@ -649,7 +656,7 @@ const tryLogin=async()=>{
     if(error) throw error;
     isAdmin=await checkAdmin();
     if(!isAdmin){ await sb.auth.signOut(); throw new Error('no admin') }
-    openAdmin();
+    setNoStats(true); openAdmin();
   }catch(e){ $('pwErr').hidden=false }
   finally{ $('bLogin').disabled=false }
 };
@@ -761,6 +768,8 @@ async function renderStats(){
    <p class="muted small">"שחקנים" נספרים לפי דפדפן, בלי שמות ובלי פרטים מזהים.</p>`;
 }
 
+$('bStatsOn').onclick=()=>{setNoStats(false);toast('המשחקים מהדפדפן הזה ייספרו שוב')};
+renderNoStats();
 renderPick();
 </script>
 </body>

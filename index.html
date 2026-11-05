@@ -392,9 +392,9 @@ const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(M
 const other=b=>b==='right'?'change':'right';
 
 /* ---------- database (Supabase) ---------- */
-const SUPABASE_URL='';      // filled in at setup
-const SUPABASE_KEY='';      // public "anon" key — safe to publish; access is enforced by row-level security
-const sb=(SUPABASE_URL&&SUPABASE_KEY&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
+const SUPABASE_URL='https://waedapydxuatsspkvxwr.supabase.co';
+const SUPABASE_KEY='sb_publishable_Bepy_yY5Qu6T952ffX1Osw_1WWzVayk';   // public key — safe to publish; access is enforced by row-level security
+const sb=(SUPABASE_URL&&SUPABASE_KEY&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{db:{schema:'koalitsia'},auth:{storageKey:'koalitsia-auth'}}):null;
 let isAdmin=false;
 const sessionId=(()=>{try{let s=localStorage.getItem('kv_sid');if(!s){s=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('kv_sid',s)}return s}catch{return 'anon'}})();
 let dbQuotes={};           // id -> row (overrides / additions)

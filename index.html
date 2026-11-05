@@ -64,8 +64,12 @@ a{color:var(--accent)}
 .lead{font-size:18px;max-width:46ch}
 .goalnote{font-size:16px;max-width:46ch;background:var(--slip);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
 .goalnote b{color:var(--accent)}
-.fb{display:flex;flex-direction:column;gap:10px;margin-top:10px;padding-top:18px;border-top:1.5px dashed var(--line)}
-.fb textarea{min-height:110px;font-family:var(--body);font-size:16px}
+.fb{display:flex;flex-direction:column;gap:10px;background:var(--slip);border:2px solid var(--accent);border-radius:14px;padding:18px 16px;box-shadow:var(--shadow)}
+.fb h2{font-size:34px;color:var(--accent)}
+.fb textarea{min-height:120px;font-family:var(--body);font-size:16px}
+.didyou{display:flex;flex-direction:column;gap:8px;align-items:flex-start;background:var(--bg2);border-radius:12px;padding:14px 16px}
+.didyou b{font-family:var(--display);font-size:30px;line-height:1;color:var(--accent)}
+.didyou p{font-size:16px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .note-item .who-line{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
 .note-item p{white-space:pre-wrap;font-size:16px}
@@ -250,22 +254,28 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
     </div>
     <p class="punch" id="punch"></p>
     <div class="facts" id="facts"></div>
-    <div class="picks" id="picks"></div>
+    <div class="didyou" id="didyou" hidden>
+      <b>הידעת?</b>
+      <p>הציטוטים ניתנו לך ביחס למפלגה שהצבעת (אולי גם כדי לבלבל אותך..). נסה שוב עם מפלגה מהצד השני של המתרס ותגלה ציטוטים אחרים (או שתגלה שאין צדדים למתרס הזה...)</p>
+      <button class="ghost" id="bOtherSide">לשחק שוב עם פתק אחר</button>
+    </div>
     <div class="row">
       <button class="primary" id="bShare" style="flex-basis:100%">שתף את התוצאה בוואטסאפ</button>
       <button class="ghost" id="bCopy">העתק</button>
       <button class="ghost" id="bAgain">שחק שוב</button>
     </div>
     <div class="fb" id="fb" hidden>
-      <h2 style="font-size:30px">רוצה להשאיר מחשבה?</h2>
-      <p class="muted small">מה הפתיע אותך, מה הרגיז, מה היית משנה במשחק. ההערה מגיעה ישר אליי.</p>
+      <h2>רוצה להשאיר מחשבה?</h2>
+      <p class="small">מה הפתיע אותך, מה הרגיז, מה היית משנה במשחק. ההערה מגיעה ישר אליי.</p>
       <label for="fb-msg" class="sr">ההערה שלך</label>
       <textarea id="fb-msg" maxlength="2000" placeholder="כתוב כאן…"></textarea>
       <label>שם (לא חובה)<input id="fb-name" maxlength="60" autocomplete="name"></label>
-      <div class="row"><button class="primary" id="fbSend">שליחה</button></div>
+      <button class="primary" id="fbSend">שליחה</button>
       <p class="small" id="fbErr" hidden style="color:var(--out)">השליחה לא הצליחה. נסה שוב בעוד רגע.</p>
     </div>
     <div class="fact" id="fbDone" hidden>תודה! ההערה נשלחה.</div>
+    <h2 style="font-size:28px;margin-top:6px">ההחלטות שלך</h2>
+    <div class="picks" id="picks"></div>
   </section>
 
   <!-- ADMIN LOGIN -->
@@ -562,6 +572,7 @@ function finish(){
   }
   $('facts').innerHTML=facts.map(f=>`<div class="fact">${esc(f)}</div>`).join('');
   $('picks').innerHTML=state.order.map(pid=>{const p=P[pid],v=state.picks[pid];return `<div><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${p.color};flex:none"></span><span>${esc(p.leader)} · ${esc(p.name)}</span><span class="tag" style="color:${v?'var(--in)':'var(--out)'}">${v?'בפנים':'בחוץ'}</span></div>`}).join('');
+  $('didyou').hidden=!state.bloc;
   $('fb').hidden=!sb; $('fbDone').hidden=true; $('fbErr').hidden=true; $('fb-msg').value='';
   show('s-end'); window.scrollTo({top:0});
   saveAndCompare(inIds,n,formed);
@@ -599,6 +610,7 @@ $('fbSend').onclick=async()=>{
   }catch(e){ $('fbErr').hidden=false }
   finally{ $('fbSend').disabled=false }
 };
+$('bOtherSide').onclick=()=>{show('s-start');window.scrollTo({top:0})};
 $('bAgain').onclick=()=>{show('s-start');window.scrollTo({top:0})};
 const SITE_URL=location.origin+location.pathname;
 function shareText(){

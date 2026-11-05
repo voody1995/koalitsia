@@ -64,6 +64,11 @@ a{color:var(--accent)}
 .lead{font-size:18px;max-width:46ch}
 .goalnote{font-size:16px;max-width:46ch;background:var(--slip);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
 .goalnote b{color:var(--accent)}
+.fb{display:flex;flex-direction:column;gap:10px;margin-top:10px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.fb textarea{min-height:110px;font-family:var(--body);font-size:16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.note-item .who-line{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.note-item p{white-space:pre-wrap;font-size:16px}
 /* ballot tray: real Israeli ballot slips, white paper, heavy letters, party name in small print */
 .tray{background:var(--bg2);border-radius:10px;padding:14px 12px 16px;box-shadow:inset 0 2px 8px rgba(0,0,0,.08)}
 .pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}
@@ -251,6 +256,16 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
       <button class="ghost" id="bCopy">העתק</button>
       <button class="ghost" id="bAgain">שחק שוב</button>
     </div>
+    <div class="fb" id="fb" hidden>
+      <h2 style="font-size:30px">רוצה להשאיר מחשבה?</h2>
+      <p class="muted small">מה הפתיע אותך, מה הרגיז, מה היית משנה במשחק. ההערה מגיעה ישר אליי.</p>
+      <label for="fb-msg" class="sr">ההערה שלך</label>
+      <textarea id="fb-msg" maxlength="2000" placeholder="כתוב כאן…"></textarea>
+      <label>שם (לא חובה)<input id="fb-name" maxlength="60" autocomplete="name"></label>
+      <div class="row"><button class="primary" id="fbSend">שליחה</button></div>
+      <p class="small" id="fbErr" hidden style="color:var(--out)">השליחה לא הצליחה. נסה שוב בעוד רגע.</p>
+    </div>
+    <div class="fact" id="fbDone" hidden>תודה! ההערה נשלחה.</div>
   </section>
 
   <!-- ADMIN LOGIN -->
@@ -268,6 +283,7 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-tab="quotes">ציטוטים</button>
       <button role="tab" aria-selected="false" data-tab="stats">סטטיסטיקה</button>
+      <button role="tab" aria-selected="false" data-tab="notes">הערות שחקנים</button>
     </div>
     <div class="panel" id="p-quotes">
       <div class="note" id="adminNote"></div>
@@ -286,6 +302,9 @@ td.q{white-space:normal;min-width:200px;font-family:var(--quote)}
     </div>
     <div class="panel" id="p-stats" hidden>
       <div id="statsBody"><p class="muted">טוען נתונים…</p></div>
+    </div>
+    <div class="panel" id="p-notes" hidden>
+      <div class="qlist" id="notesBody"><p class="muted">טוען הערות…</p></div>
     </div>
   </section>
 
@@ -543,6 +562,7 @@ function finish(){
   }
   $('facts').innerHTML=facts.map(f=>`<div class="fact">${esc(f)}</div>`).join('');
   $('picks').innerHTML=state.order.map(pid=>{const p=P[pid],v=state.picks[pid];return `<div><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${p.color};flex:none"></span><span>${esc(p.leader)} · ${esc(p.name)}</span><span class="tag" style="color:${v?'var(--in)':'var(--out)'}">${v?'בפנים':'בחוץ'}</span></div>`}).join('');
+  $('fb').hidden=!sb; $('fbDone').hidden=true; $('fbErr').hidden=true; $('fb-msg').value='';
   show('s-end'); window.scrollTo({top:0});
   saveAndCompare(inIds,n,formed);
 }
@@ -568,6 +588,17 @@ async function saveAndCompare(inIds,n,formed){
     await sb.from('plays').insert(row);
   }catch(e){console.warn('save',e)}
 }
+$('fbSend').onclick=async()=>{
+  const message=$('fb-msg').value.trim(), name=$('fb-name').value.trim();
+  if(!message){toast('כתוב משהו לפני השליחה');$('fb-msg').focus();return}
+  $('fbSend').disabled=true; $('fbErr').hidden=true;
+  try{
+    const {error}=await sb.from('feedback').insert({message,name:name||null,voted:state.voted||'none',seats:seatsIn(),session:sessionId});
+    if(error) throw error;
+    $('fb').hidden=true; $('fbDone').hidden=false;
+  }catch(e){ $('fbErr').hidden=false }
+  finally{ $('fbSend').disabled=false }
+};
 $('bAgain').onclick=()=>{show('s-start');window.scrollTo({top:0})};
 const SITE_URL=location.origin+location.pathname;
 function shareText(){
@@ -623,7 +654,23 @@ function openAdmin(){
 const saveQuote=async(id,row)=>{const {error}=await sb.from('quotes').upsert({id,...row,updated_at:new Date().toISOString()}); if(error) throw error; await loadQuotes()};
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
 function setTab(t){document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===t)));
-  $('p-quotes').hidden=t!=='quotes';$('p-stats').hidden=t!=='stats'; if(t==='stats') renderStats();}
+  $('p-quotes').hidden=t!=='quotes';$('p-stats').hidden=t!=='stats';$('p-notes').hidden=t!=='notes'; if(t==='stats') renderStats(); if(t==='notes') renderNotes();}
+async function renderNotes(){
+  const box=$('notesBody'); box.innerHTML='<p class="muted">טוען הערות…</p>';
+  const {data,error}=await sb.from('feedback').select('id,created_at,name,message,voted,seats').order('created_at',{ascending:false}).limit(1000);
+  if(error){box.innerHTML='<div class="note">לא הצלחתי לקרוא את ההערות. נסה להתנתק ולהתחבר שוב.</div>';return}
+  if(!data.length){box.innerHTML='<div class="note">עוד אין הערות. שחקנים יכולים להשאיר הערה במסך הסיום, ומה שהם כותבים יופיע כאן.</div>';return}
+  const fmt=d=>new Date(d).toLocaleString('he-IL',{day:'numeric',month:'numeric',year:'2-digit',hour:'2-digit',minute:'2-digit'});
+  box.innerHTML=`<p class="muted small">${data.length} הערות</p>`+data.map(n=>`<div class="qitem note-item">
+    <div class="who-line"><b style="color:var(--ink)">${esc(n.name||'אנונימי')}</b><span>${fmt(n.created_at)}</span>${n.voted&&n.voted!=='none'?`<span class="pill">הצביע ${esc(voterOf(n.voted)?.name||n.voted)}</span>`:''}${n.seats!=null?`<span class="pill">${n.seats} מנדטים</span>`:''}</div>
+    <p>${esc(n.message)}</p>
+    <div class="qbtns"><button data-del="${n.id}">מחיקה</button></div></div>`).join('');
+  box.querySelectorAll('button[data-del]').forEach(b=>b.onclick=async()=>{
+    if(!b.dataset.armed){b.dataset.armed='1';b.textContent='לחץ שוב למחיקה';setTimeout(()=>{delete b.dataset.armed;b.textContent='מחיקה'},3000);return}
+    const {error}=await sb.from('feedback').delete().eq('id',b.dataset.del);
+    if(error){toast('המחיקה נכשלה');return} toast('ההערה נמחקה'); renderNotes();
+  });
+}
 $('f-filter').onchange=renderQList;
 function renderQList(){
   const f=$('f-filter').value; const can=sb&&isAdmin;

@@ -81,3 +81,30 @@ grant select on koalitsia.plays to authenticated;
 revoke all on koalitsia.admins from anon, authenticated;
 grant execute on function koalitsia.is_admin()       to anon, authenticated;
 grant execute on function koalitsia.peer_rates(text) to anon, authenticated;
+
+-- Player notes left on the end screen (name optional). Only admins read them.
+create table if not exists koalitsia.feedback (
+  id          bigint generated always as identity primary key,
+  created_at  timestamptz not null default now(),
+  name        text,
+  message     text not null,
+  voted       text,
+  seats       int,
+  session     text
+);
+alter table koalitsia.feedback enable row level security;
+drop policy if exists "anyone leaves a note" on koalitsia.feedback;
+create policy "anyone leaves a note" on koalitsia.feedback for insert
+  with check (
+    length(message) between 1 and 2000
+    and (name is null or length(name) <= 60)
+    and (voted is null or length(voted) <= 40)
+    and (session is null or length(session) <= 60)
+    and (seats is null or seats between 0 and 120)
+  );
+drop policy if exists "admins read notes" on koalitsia.feedback;
+create policy "admins read notes" on koalitsia.feedback for select to authenticated using (koalitsia.is_admin());
+drop policy if exists "admins delete notes" on koalitsia.feedback;
+create policy "admins delete notes" on koalitsia.feedback for delete to authenticated using (koalitsia.is_admin());
+grant insert on koalitsia.feedback to anon, authenticated;
+grant select, delete on koalitsia.feedback to authenticated;

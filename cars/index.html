@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>איך נקרא להם?</title>
+<meta name="description" content="מציעים שמות לשלושת הרכבים, מצביעים ומחליטים ביחד.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="איך נקרא להם? 🚗🚗🚗">
+<meta property="og:description" content="מציעים שמות לשלושת הרכבים, מצביעים ומחליטים ביחד. ההצבעה נסגרת ביום שני 9.11 ב־12:00.">
+<meta name="theme-color" content="#BFE0FF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Secular+One&display=swap">
+<style>
+:root{
+  --sky1:#BFE0FF; --sky2:#FBE3F0; --ink:#17203A; --muted:#56607A; --line:rgba(23,32,58,.14);
+  --card:#FFFFFF; --card2:#F2F5FB; --accent:#3A57E8; --accent-ink:#FFFFFF;
+  --like:#1E8C58; --boo:#C9364A;
+  --c1:#0B8F80; --c2:#D9582B; --c3:#7445D8;
+  --bub-hi:rgba(255,255,255,.96); --bub-mid:rgba(255,255,255,.62); --bub-lo:rgba(255,255,255,.38);
+  --bub-edge:rgba(255,255,255,.9); --tint1:rgba(140,110,255,.22); --tint2:rgba(90,210,255,.25);
+  --shadow:0 14px 30px -14px rgba(23,32,58,.35);
+  --display:"Secular One","Assistant",system-ui,sans-serif;
+  --body:"Assistant","Arial Hebrew",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --sky1:#0C1430; --sky2:#2A1638; --ink:#ECF0FA; --muted:#A3ACC4; --line:rgba(236,240,250,.16);
+  --card:#19223F; --card2:#222C4D; --accent:#8EA2FF; --accent-ink:#0C1430;
+  --like:#52CC92; --boo:#F27D8C;
+  --c1:#3FD3C2; --c2:#FF9A70; --c3:#B79BFF;
+  --bub-hi:rgba(255,255,255,.22); --bub-mid:rgba(255,255,255,.09); --bub-lo:rgba(255,255,255,.05);
+  --bub-edge:rgba(255,255,255,.28); --tint1:rgba(160,130,255,.25); --tint2:rgba(90,210,255,.2);
+  --shadow:0 14px 30px -14px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sky1:#0C1430; --sky2:#2A1638; --ink:#ECF0FA; --muted:#A3ACC4; --line:rgba(236,240,250,.16);
+  --card:#19223F; --card2:#222C4D; --accent:#8EA2FF; --accent-ink:#0C1430;
+  --like:#52CC92; --boo:#F27D8C;
+  --c1:#3FD3C2; --c2:#FF9A70; --c3:#B79BFF;
+  --bub-hi:rgba(255,255,255,.22); --bub-mid:rgba(255,255,255,.09); --bub-lo:rgba(255,255,255,.05);
+  --bub-edge:rgba(255,255,255,.28); --tint1:rgba(160,130,255,.25); --tint2:rgba(90,210,255,.2);
+  --shadow:0 14px 30px -14px rgba(0,0,0,.7); color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--sky1)}
+body{margin:0;min-height:100vh;min-height:100dvh;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;direction:rtl;
+  padding:0 max(16px,env(safe-area-inset-right)) calc(110px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(170deg,var(--sky1) 0%,var(--sky2) 100%)}
+.wrap{max-width:640px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:10px 18px;font-weight:700;color:var(--ink);background:var(--card2)}
+button:disabled{opacity:.5;cursor:default}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.primary{background:var(--accent);color:var(--accent-ink)}
+.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.danger{background:transparent;color:var(--boo);box-shadow:inset 0 0 0 1.5px currentColor}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;justify-content:space-between;
+  padding:calc(8px + env(safe-area-inset-top)) 0 8px;margin:0 auto;max-width:640px}
+.clock{display:inline-flex;align-items:center;gap:6px;background:var(--card);box-shadow:var(--shadow);border-radius:999px;
+  padding:6px 12px;font-weight:800;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock.closed{color:var(--boo)}
+.top-actions{display:flex;gap:6px}
+.top-actions button{padding:6px 12px;font-size:14px;background:var(--card);box-shadow:var(--shadow)}
+
+/* header */
+.hero{text-align:center;padding:14px 0 6px}
+.hero h1{font-size:clamp(40px,12vw,64px)}
+.hero p{margin-top:6px;color:var(--muted);text-wrap:balance}
+
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 8px}
+.car{background:var(--card);border-radius:16px;padding:10px 6px 9px;text-align:center;box-shadow:var(--shadow);border-top:5px solid var(--cc);min-width:0}
+.car .model{font-weight:800;font-size:13px;margin-top:6px;line-height:1.2}
+.car .now{font-size:12px;color:var(--muted)}
+.car .now b{color:var(--cc)}
+.c1{--cc:var(--c1)} .c2{--cc:var(--c2)} .c3{--cc:var(--c3)}
+.plate{display:inline-flex;direction:ltr;align-items:stretch;border-radius:5px;overflow:hidden;border:1.5px solid #1a1a1a;
+  font:800 12px/1 "Assistant",sans-serif;letter-spacing:.02em;background:#F6CE16;color:#111;white-space:nowrap}
+.plate i{font-style:normal;background:#1F46B8;color:#fff;font-size:7px;padding:2px 2px;display:flex;align-items:flex-end}
+.plate span{padding:3px 4px}
+
+/* board */
+.board-head{display:flex;align-items:baseline;justify-content:space-between;margin:22px 2px 4px}
+.board-head h2{font-size:24px}
+.sky{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:6px 10px;padding:10px 0 30px;min-height:200px}
+.empty{text-align:center;color:var(--muted);padding:50px 10px}
+.empty b{display:block;font-size:44px}
+
+.bubble{--d:150px;position:relative;width:var(--d);height:var(--d);border-radius:50%;flex:none;
+  margin-top:var(--mt,0px);margin-inline:var(--mx,0px);
+  background:radial-gradient(circle at 32% 26%,var(--bub-hi) 0 8%,var(--bub-mid) 22%,var(--bub-lo) 70%);
+  box-shadow:inset 0 0 0 1.5px var(--bub-edge),inset -10px -14px 28px var(--tint1),inset 10px 8px 22px var(--tint2),var(--shadow);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:calc(var(--d)*.13) calc(var(--d)*.11) calc(var(--d)*.1);
+  transition:width .5s,height .5s,opacity .3s;animation:float var(--dur,7s) ease-in-out var(--delay,0s) infinite;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.bubble.low{opacity:.78}
+.bubble.flash{animation:pop .9s ease-out,float var(--dur,7s) ease-in-out var(--delay,0s) infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(var(--dy,10px) * -1))}}
+@keyframes pop{0%{transform:scale(.4)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.bubble,.bubble.flash{animation:none}}
+.b-body{background:none;padding:0;border-radius:0;display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;color:inherit;font-weight:inherit;min-height:0}
+.b-idea{font-size:11.5px;color:var(--muted);line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:100%;margin-bottom:2px}
+.b-names{display:flex;flex-direction:column;align-items:center;font-family:var(--display);line-height:1.08;max-width:100%}
+.b-names span{font-size:max(15px,calc(var(--d) * .105));color:var(--cc);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.b-names.solo span{font-size:max(20px,calc(var(--d) * .16))}
+.b-solo-tag{font-size:11px;color:var(--muted);font-weight:700}
+.b-votes{display:flex;gap:6px;margin-top:6px}
+.vbtn{padding:3px 8px;font-size:13px;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line);font-variant-numeric:tabular-nums;display:inline-flex;gap:4px;align-items:center}
+.vbtn.like.on{background:var(--like);color:#fff;box-shadow:none}
+.vbtn.boo.on{background:var(--boo);color:#fff;box-shadow:none}
+.medal{position:absolute;top:2%;inset-inline-end:8%;font-size:calc(var(--d) * .15);filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.tag{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:800;
+  background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:999px}
+.tag.new{background:#F6CE16;color:#111}
+
+/* winner */
+.winner{background:var(--card);border-radius:22px;padding:18px 16px;text-align:center;box-shadow:var(--shadow);margin-top:16px}
+.winner h2{font-size:28px}
+.winner .w-names{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 6px}
+.winner .w-names div{font-family:var(--display);font-size:22px;color:var(--cc);line-height:1.1}
+.winner .w-names small{display:block;font-family:var(--body);font-size:11px;color:var(--muted)}
+
+/* floating action */
+.fab{position:fixed;z-index:15;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom));
+  font-size:18px;padding:14px 26px;box-shadow:0 12px 30px -8px rgba(58,87,232,.6)}
+
+/* login */
+.login{text-align:center;padding:30px 0}
+.gbtn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1f1f1f;box-shadow:0 0 0 1px #dadce0,var(--shadow);padding:12px 22px;margin-top:22px;font-size:17px}
+.gbtn svg{width:20px;height:20px}
+
+/* dialogs as bottom sheets */
+dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:640px;width:100%;margin:auto auto 0;max-height:92dvh}
+dialog::backdrop{background:rgba(10,15,35,.45)}
+.sheet{background:var(--card);border-radius:24px 24px 0 0;padding:20px 18px calc(18px + env(safe-area-inset-bottom));overflow:auto;max-height:92dvh}
+.sheet h2{font-size:26px}
+.field{display:block;margin-top:14px}
+.field .lbl{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;margin-bottom:5px}
+.field .lbl .dot{width:10px;height:10px;border-radius:50%;background:var(--cc)}
+.field .lbl .muted{font-weight:400}
+.field input{width:100%;font:inherit;font-size:17px;padding:11px 13px;border-radius:12px;border:1.5px solid var(--line);background:var(--card2);color:var(--ink)}
+.field input:focus{border-color:var(--cc,var(--accent));outline:none}
+.hint{font-size:14px;color:var(--muted);margin-top:6px}
+.err{color:var(--boo);font-weight:700;font-size:14px;margin-top:10px}
+.dup{margin-top:12px;background:var(--card2);border-radius:14px;padding:10px 12px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.dup button{padding:6px 12px;font-size:14px}
+.row{display:flex;gap:8px;justify-content:flex-start;margin-top:18px;flex-wrap:wrap}
+.row .grow{flex:1}
+
+.d-names{display:grid;gap:8px;margin:14px 0}
+.d-name{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card2);border-radius:14px;padding:10px 12px;border-inline-start:5px solid var(--cc)}
+.d-name b{font-family:var(--display);font-weight:400;font-size:24px;color:var(--cc);line-height:1.1;word-break:break-word}
+.d-name .m{font-size:12px;color:var(--muted);text-align:left}
+.d-idea{font-size:17px;margin-top:6px}
+.d-votes{display:flex;gap:10px;margin-top:14px}
+.d-votes .vbtn{font-size:17px;padding:10px 18px}
+
+/* admin */
+.admin h2{font-size:30px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stat{background:var(--card);border-radius:16px;padding:12px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:28px;font-family:var(--display);font-weight:400}
+.stat span{font-size:13px;color:var(--muted)}
+.panel{background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-top:14px}
+.panel h3{font-size:20px;margin-bottom:8px}
+.top5 li{margin:8px 0}
+.top5{padding-inline-start:22px;margin:0}
+.names-line{font-family:var(--display);font-size:18px}
+.names-line span{color:var(--cc)}
+.aprop{border-top:1px solid var(--line);padding:12px 0}
+.aprop:first-of-type{border-top:0}
+.aprop .meta{font-size:13px;color:var(--muted)}
+.who{font-size:13px;margin-top:4px}
+.who b{font-weight:800}
+.who .l{color:var(--like)} .who .x{color:var(--boo)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:right;padding:7px 4px;border-top:1px solid var(--line);vertical-align:top}
+th{font-weight:800;border-top:0;color:var(--muted);font-size:12px}
+td.n{font-variant-numeric:tabular-nums;text-align:center}
+
+.toast{position:fixed;z-index:50;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--card);
+  padding:10px 16px;border-radius:12px;font-weight:700;font-size:15px;max-width:calc(100% - 32px);text-align:center;box-shadow:var(--shadow)}
+.setup{background:var(--card);border-radius:16px;padding:14px;margin-top:20px;box-shadow:var(--shadow);font-size:15px}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="clock" id="clock" role="timer" aria-live="off">⏳ <span id="clockTxt">…</span></div>
+  <div class="top-actions" id="topActions" hidden>
+    <button id="bAdmin" hidden>ניהול</button>
+    <button id="bBoard" hidden>ללוח</button>
+    <button id="bLogout">יציאה</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>איך נקרא להם?</h1>
+    <p>מציעים שמות לשלושת הרכבים, מצביעים ומחליטים ביחד.<br><span id="deadlineTxt"></span></p>
+  </section>
+
+  <div class="cars" id="cars"></div>
+
+  <!-- before login -->
+  <section class="login" id="vLogin" hidden>
+    <p class="muted">כדי להציע שמות ולהצביע צריך להתחבר עם חשבון גוגל. אף אחד לא רואה מי הציע מה או מי הצביע.</p>
+    <button class="gbtn" id="bGoogle">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+      התחברות עם Google
+    </button>
+  </section>
+
+  <!-- the board -->
+  <section id="vBoard" hidden>
+    <div id="winner"></div>
+    <div class="board-head">
+      <h2 id="boardTitle">ההצעות</h2>
+      <span class="small muted" id="boardCount"></span>
+    </div>
+    <div class="sky" id="sky"></div>
+  </section>
+
+  <!-- admin -->
+  <section class="admin" id="vAdmin" hidden></section>
+
+  <div class="setup" id="setupMsg" hidden></div>
+</main>
+
+<button class="primary fab" id="fab" hidden>＋ להציע שמות</button>
+
+<dialog id="dForm"><form class="sheet" id="fProp" novalidate>
+  <h2 id="fTitle">הצעה חדשה</h2>
+  <p class="hint">שלושה שמות שהולכים ביחד. רוצים להציע רק ל־MG? משאירים את שני האיוניקים ריקים.</p>
+  <div id="fFields"></div>
+  <label class="field"><span class="lbl">מה הרעיון שמחבר ביניהם? <span class="muted">(לא חובה, אבל עוזר)</span></span>
+    <input id="iIdea" maxlength="140" placeholder="למשל: נשיאי ישראל" autocomplete="off"></label>
+  <div class="dup" id="dupBox" hidden><span>כבר הציעו בדיוק את השמות האלה.</span><button type="button" class="primary" id="bDupGo">להצביע להם</button></div>
+  <p class="err" id="fErr" hidden></p>
+  <div class="row"><button type="submit" class="primary grow" id="fSubmit">לשלוח</button><button type="button" class="ghost" id="fCancel">ביטול</button></div>
+</form></dialog>
+
+<dialog id="dShow"><div class="sheet" id="showBody"></div></dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+<script>
+const SUPABASE_URL='https://waedapydxuatsspkvxwr.supabase.co';
+const SUPABASE_KEY='sb_publishable_Bepy_yY5Qu6T952ffX1Osw_1WWzVayk';   // public key — safe to publish; every action is checked in the database
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{db:{schema:'car_names'},auth:{storageKey:'car-names-auth',flowType:'pkce'}});
+
+const CARS=[
+  {k:'n603',plate:'571-55-603',model:'יונדאי איוניק 5',now:'ויצמן',c:'c1'},
+  {k:'n703',plate:'571-54-703',model:'יונדאי איוניק 5',now:'זלמן',c:'c2'},
+  {k:'nmg', plate:'858-60-204',model:'MG S6',now:null,c:'c3'},
+];
+const EDIT_MS=5*60*1000, FRESH_MS=60*60*1000;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9א-ת]/g,'').replace(/[ךםןףץ]/g,c=>'כמנפצ'['ךםןףץ'.indexOf(c)]);
+const keyOf=p=>[p.n603,p.n703,p.nmg].map(norm).join('|');
+
+const S={user:null,props:[],deadline:new Date('2026-11-09T12:00:00+02:00'),off:0,isAdmin:false,view:'board',loaded:false,flash:null};
+const now=()=>Date.now()+S.off;
+const closed=()=>now()>=S.deadline.getTime();
+
+/* ---------- small things ---------- */
+let toastT;
+function toast(msg){const t=$('toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,2800)}
+const ERR={closed:'ההצבעה נסגרה',edit_window:'עברו 5 דקות, אי אפשר כבר לשנות',mg_required:'חייב שם ל־MG',
+  ioniqs_together:'אם מציעים לאיוניקים, צריך שם לשניהם',slow_down:'רגע, לאט לאט 🙂',login:'צריך להתחבר מחדש',not_admin:'אין הרשאת ניהול'};
+function errMsg(e){
+  const m=(e&&(e.message||e.msg))||'';
+  for(const k in ERR) if(m.includes(k)) return ERR[k];
+  if(/schema|PGRST10|PGRST20/i.test(m+' '+(e&&e.code))) return 'מסד הנתונים עוד לא הוגדר';
+  return 'משהו השתבש, נסו שוב';
+}
+function plate(p){const [a,b,c]=p.split('-');return `<span class="plate"><i>IL</i><span>${a}-${b}-${c}</span></span>`}
+function mmss(ms){ms=Math.max(0,ms);const s=Math.ceil(ms/1000);return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`}
+function ago(t){const m=Math.round((now()-t)/60000);if(m<1)return 'הרגע';if(m<60)return `לפני ${m} דק׳`;const h=Math.round(m/60);if(h<24)return h===1?'לפני שעה':`לפני ${h} שעות`;const d=Math.round(h/24);return d===1?'אתמול':`לפני ${d} ימים`}
+const fmtIL=new Intl.DateTimeFormat('he-IL',{timeZone:'Asia/Jerusalem',weekday:'long',day:'numeric',month:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+function deadlineText(){
+  const parts=Object.fromEntries(fmtIL.formatToParts(S.deadline).map(p=>[p.type,p.value]));
+  return `ההצבעה נסגרת ב${parts.weekday} ${parts.day}.${parts.month} ב־${parts.hour}:${parts.minute}`;
+}
+function fmtDate(t){return new Date(t).toLocaleString('he-IL',{timeZone:'Asia/Jerusalem',day:'numeric',month:'numeric',hour:'2-digit',minute:'2-digit'})}
+
+/* ---------- static parts ---------- */
+$('cars').innerHTML=CARS.map(c=>`<div class="car ${c.c}">${plate(c.plate)}<div class="model">${c.model}</div>
+  <div class="now">${c.now?`היום: <b>${c.now}</b>`:'<b>חדשה</b> · בלי שם'}</div></div>`).join('');
+$('fFields').innerHTML=CARS.map(c=>`<label class="field ${c.c}"><span class="lbl"><span class="dot"></span>${c.model} ${plate(c.plate)}
+  <span class="muted">${c.now?'היום: '+c.now:'חדשה'}</span></span>
+  <input id="i_${c.k}" maxlength="30" autocomplete="off" placeholder="${c.now?'שם חדש':'השם של ה־MG'}"></label>`).join('');
+
+/* ---------- countdown ---------- */
+let wasClosed=null;
+function tick(){
+  const left=S.deadline.getTime()-now();
+  const c=$('clock');
+  if(left<=0){$('clockTxt').textContent='ההצבעה נסגרה';c.classList.add('closed')}
+  else{
+    c.classList.remove('closed');
+    const s=Math.floor(left/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),ss=s%60;
+    const hms=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
+    $('clockTxt').textContent=d>0?`${d===1?'יום':d===2?'יומיים':d+' ימים'} ו־${hms}`:hms;
+  }
+  $('deadlineTxt').textContent=closed()?'ההצבעה נסגרה. אלה השמות שנבחרו:':deadlineText();
+  const isC=closed();
+  if(wasClosed!==null&&isC!==wasClosed&&S.user) load();
+  wasClosed=isC;
+  // live edit-window timers on my own bubbles
+  document.querySelectorAll('[data-edit-until]').forEach(el=>{
+    const ms=+el.dataset.editUntil-now();
+    if(ms<=0){el.remove();return}
+    el.textContent=`ההצעה שלך · עריכה ${mmss(ms)}`;
+  });
+  const se=$('showEdit'); if(se){const ms=+se.dataset.until-now(); if(ms<=0) se.remove(); else $('showEditT').textContent=mmss(ms)}
+}
+setInterval(tick,1000); tick();
+
+/* ---------- auth ---------- */
+$('bGoogle').onclick=async()=>{
+  const {error}=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+location.pathname}});
+  if(error) toast(errMsg(error));
+};
+$('bLogout').onclick=async()=>{await sb.auth.signOut();location.hash='';location.reload()};
+sb.auth.onAuthStateChange((ev,session)=>{
+  if(session&&!S.user){S.user=session.user;setTimeout(enter,0)}
+  else if(!session&&ev!=='TOKEN_REFRESHED'){S.user=null;showLogin()}
+});
+function showLogin(){$('vLogin').hidden=false;$('vBoard').hidden=true;$('vAdmin').hidden=true;$('fab').hidden=true;$('topActions').hidden=true}
+
+let chan,poll;
+async function enter(){
+  $('vLogin').hidden=true;$('topActions').hidden=false;
+  sb.rpc('visit').then(()=>{});
+  await load();
+  chan=sb.channel('car-names-board').on('broadcast',{event:'changed'},()=>loadSoon()).subscribe();
+  poll=setInterval(()=>{if(!document.hidden) load()},20000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden) load()});
+  window.addEventListener('hashchange',route); route();
+}
+function announce(){try{chan&&chan.send({type:'broadcast',event:'changed',payload:{}})}catch(e){}}
+let soonT; function loadSoon(){clearTimeout(soonT);soonT=setTimeout(()=>{load(); if(S.view==='admin') loadAdmin()},300)}
+
+/* ---------- data ---------- */
+let loading=false;
+async function load(){
+  if(loading) return; loading=true;
+  const t0=Date.now();
+  const {data,error}=await sb.rpc('board');
+  loading=false;
+  if(error){showSetup(error);return}
+  $('setupMsg').hidden=true;
+  S.off=new Date(data.now).getTime()-Math.round((t0+Date.now())/2);
+  S.deadline=new Date(data.deadline);
+  S.isAdmin=!!data.is_admin;
+  S.props=data.proposals.map(p=>({...p,t:new Date(p.created_at).getTime(),likes:+p.likes,boos:+p.boos,my_vote:p.my_vote==null?0:+p.my_vote}));
+  S.loaded=true;
+  render(); refreshShow();
+}
+function showSetup(e){
+  const m=errMsg(e);
+  if(m==='מסד הנתונים עוד לא הוגדר'){
+    $('setupMsg').hidden=false;
+    $('setupMsg').innerHTML='<b>כמעט מוכן.</b> צריך להריץ את <code>cars/schema.sql</code> ב־Supabase ולהוסיף את <code>car_names</code> ל־Exposed schemas.';
+  } else toast(m);
+}
+
+/* ---------- ranking ---------- */
+const net=p=>p.likes-p.boos;
+// Shown order and size: net score, with a fading head start for the first hour so new ideas get seen
+function shown(p){const age=now()-p.t;return net(p)+(age<FRESH_MS?2*(1-age/FRESH_MS):0)}
+function realRank(){return [...S.props].sort((a,b)=>net(b)-net(a)||b.likes-a.likes||a.t-b.t)}
+
+/* ---------- board ---------- */
+function hash(n){let x=Math.sin(n*9301+49297)*233280;return x-Math.floor(x)}
+function namesHTML(p,cls='b-names'){
+  if(!p.n603) return `<span class="${cls} solo"><span class="c3">${esc(p.nmg)}</span></span><span class="b-solo-tag">רק ל־MG</span>`;
+  return `<span class="${cls}">${CARS.map(c=>`<span class="${c.c}">${esc(p[c.k])}</span>`).join('')}</span>`;
+}
+function render(){
+  const isC=closed();
+  $('fab').hidden=isC||S.view!=='board';
+  $('bAdmin').hidden=!S.isAdmin||S.view==='admin';
+  $('bBoard').hidden=S.view!=='admin';
+  renderWinner();
+  const list=[...S.props].sort((a,b)=>shown(b)-shown(a)||b.likes-a.likes||b.t-a.t);
+  const rank=realRank(), medals=['🥇','🥈','🥉'];
+  const medalOf={}; rank.slice(0,3).forEach((p,i)=>{if(net(p)>0) medalOf[p.id]=medals[i]});
+  $('boardCount').textContent=S.props.length?`${S.props.length} הצעות`:'';
+  $('boardTitle').textContent=isC?'כל ההצעות':'ההצעות';
+  const sky=$('sky');
+  if(!list.length){sky.innerHTML='<div class="empty"><b>🎈</b>עוד אין הצעות. תהיו הראשונים!</div>';return}
+  sky.innerHTML=list.map(p=>{
+    const s=shown(p);
+    // two bubbles fit side by side on a phone; a well-liked one grows to fill a row of its own
+    const d=Math.round(Math.max(128,Math.min(230,148+12*s)));
+    const r1=hash(p.id),r2=hash(p.id+.5),r3=hash(p.id+.25);
+    // the delay follows the page clock, so a re-render keeps each bubble mid-float instead of jumping
+    const dur=5.5+r3*4, delay=(performance.now()/1000+r1*6)%dur;
+    const editUntil=p.t+EDIT_MS;
+    const tag=p.mine&&!isC&&editUntil>now()?`<span class="tag" data-edit-until="${editUntil}">ההצעה שלך · עריכה ${mmss(editUntil-now())}</span>`
+      :(now()-p.t<FRESH_MS?'<span class="tag new">חדש</span>':'');
+    return `<div class="bubble${net(p)<0?' low':''}${S.flash===p.id?' flash':''}" data-id="${p.id}"
+      style="--d:${d}px;--mt:${Math.round(r1*26)}px;--mx:${Math.round(r2*6)}px;--dur:${dur.toFixed(2)}s;--delay:-${delay.toFixed(2)}s;--dy:${6+Math.round(r2*8)}px">
+      ${medalOf[p.id]?`<span class="medal" aria-label="מקום">${medalOf[p.id]}</span>`:''}
+      <button class="b-body" data-show="${p.id}" aria-label="פרטים">
+        ${p.idea?`<span class="b-idea">${esc(p.idea)}</span>`:''}
+        ${namesHTML(p)}
+      </button>
+      ${votesHTML(p,isC)}
+      ${tag}
+    </div>`;
+  }).join('');
+  if(S.flash){const el=sky.querySelector(`[data-id="${S.flash}"]`);if(el) el.scrollIntoView({behavior:'smooth',block:'center'});S.flash=null}
+}
+function votesHTML(p,isC,cls='b-votes'){
+  return `<div class="${cls}">
+    <button class="vbtn like${p.my_vote===1?' on':''}" data-vote="${p.id}" data-v="1" ${isC?'disabled':''} aria-pressed="${p.my_vote===1}" aria-label="לייק">👍 <b>${p.likes}</b></button>
+    <button class="vbtn boo${p.my_vote===-1?' on':''}" data-vote="${p.id}" data-v="-1" ${isC?'disabled':''} aria-pressed="${p.my_vote===-1}" aria-label="בוז">👎 <b>${p.boos}</b></button>
+  </div>`;
+}
+function renderWinner(){
+  const w=$('winner');
+  if(!closed()||!S.props.length){w.innerHTML='';return}
+  const p=realRank()[0];
+  w.innerHTML=`<div class="winner"><h2>🏆 השמות שנבחרו</h2>
+    <div class="w-names">${CARS.map(c=>`<div class="${c.c}">${p[c.k]?esc(p[c.k]):(c.now||'—')}<small>${c.plate}${!p[c.k]&&c.now?' · נשאר':''}</small></div>`).join('')}</div>
+    ${p.idea?`<p class="muted">${esc(p.idea)}</p>`:''}<p class="small muted">👍 ${p.likes} · 👎 ${p.boos}</p></div>`;
+}
+
+/* ---------- voting ---------- */
+document.addEventListener('click',e=>{
+  const v=e.target.closest('[data-vote]'); if(v){vote(+v.dataset.vote,+v.dataset.v);return}
+  const s=e.target.closest('[data-show]'); if(s){openShow(+s.dataset.show);return}
+});
+async function vote(id,v){
+  if(closed()) return toast(ERR.closed);
+  const p=S.props.find(x=>x.id===id); if(!p) return;
+  const prev=p.my_vote, next=prev===v?0:v;
+  const apply=(from,to)=>{if(from===1)p.likes--;if(from===-1)p.boos--;if(to===1)p.likes++;if(to===-1)p.boos++;p.my_vote=to};
+  apply(prev,next); render(); refreshShow();
+  const {error}=await sb.rpc('vote',{pid:id,pv:next});
+  if(error){apply(next,prev);render();refreshShow();toast(errMsg(error));return}
+  announce();
+}
+
+/* ---------- details sheet ---------- */
+let showId=null;
+function openShow(id){showId=id;refreshShow();$('dShow').showModal()}
+function refreshShow(){
+  if(showId==null) return;
+  const p=S.props.find(x=>x.id===showId); if(!p){if($('dShow').open)$('dShow').close();return}
+  const isC=closed(), until=p.t+EDIT_MS, canEdit=p.mine&&!isC&&until>now();
+  $('showBody').innerHTML=`
+    ${p.idea?`<p class="d-idea">💡 ${esc(p.idea)}</p>`:'<h2>הצעה</h2>'}
+    <div class="d-names">${CARS.filter(c=>p[c.k]).map(c=>`<div class="d-name ${c.c}"><b>${esc(p[c.k])}</b><span class="m">${plate(c.plate)}<br>${c.model}${c.now?` · היום ${c.now}`:''}</span></div>`).join('')}</div>
+    ${!p.n603?'<p class="hint">הצעה רק ל־MG. האיוניקים נשארים ויצמן וזלמן.</p>':''}
+    <p class="small muted">הוצעה ${ago(p.t)}${p.mine?' · ההצעה שלך':''}</p>
+    ${votesHTML(p,isC,'d-votes')}
+    <div class="row">
+      ${canEdit?`<span id="showEdit" data-until="${until}" style="display:contents"><button class="primary" id="bEdit">לתקן</button><button class="danger" id="bDel">למחוק</button><span class="small muted" style="align-self:center">עוד <span id="showEditT">${mmss(until-now())}</span></span></span>`:''}
+      ${S.isAdmin&&!canEdit?`<button class="danger" id="bAdminDel">למחוק (ניהול)</button>`:''}
+      <button class="ghost" id="bClose">סגירה</button>
+    </div>`;
+  $('bClose').onclick=()=>$('dShow').close();
+  if($('bEdit')) $('bEdit').onclick=()=>{$('dShow').close();openForm(p)};
+  if($('bDel')) $('bDel').onclick=()=>removeProp(p.id);
+  if($('bAdminDel')) $('bAdminDel').onclick=()=>removeProp(p.id);
+}
+$('dShow').addEventListener('close',()=>{showId=null});
+$('dShow').addEventListener('click',e=>{if(e.target===$('dShow')) $('dShow').close()});
+async function removeProp(id){
+  if(!confirm('למחוק את ההצעה?')) return;
+  const {error}=await sb.rpc('remove',{pid:id});
+  if(error) return toast(errMsg(error));
+  if($('dShow').open) $('dShow').close();
+  toast('נמחקה'); announce(); await load(); if(S.view==='admin') loadAdmin();
+}
+
+/* ---------- proposal form ---------- */
+let editing=null;
+function vals(){return {n603:$('i_n603').value.trim(),n703:$('i_n703').value.trim(),nmg:$('i_nmg').value.trim(),idea:$('iIdea').value.trim()}}
+function openForm(p){
+  if(closed()) return toast(ERR.closed);
+  editing=p||null;
+  $('fTitle').textContent=p?'תיקון ההצעה':'הצעה חדשה';
+  $('fSubmit').textContent=p?'לשמור':'לשלוח';
+  for(const c of CARS) $('i_'+c.k).value=p?(p[c.k]||''):'';
+  $('iIdea').value=p?(p.idea||''):'';
+  $('fErr').hidden=true; checkDup();
+  $('dForm').showModal();
+  if(!p) setTimeout(()=>$('i_n603').focus(),50);
+}
+function findDup(){
+  const v=vals(); if(!v.nmg) return null;
+  const k=keyOf(v);
+  return S.props.find(p=>keyOf(p)===k&&(!editing||p.id!==editing.id))||null;
+}
+function checkDup(){$('dupBox').hidden=!findDup()}
+$('fProp').addEventListener('input',()=>{checkDup();$('fErr').hidden=true});
+$('fab').onclick=()=>openForm();
+$('fCancel').onclick=()=>$('dForm').close();
+$('bDupGo').onclick=()=>{const d=findDup();$('dForm').close();if(d){S.flash=d.id;render();setTimeout(()=>openShow(d.id),600)}};
+function formErr(m){$('fErr').textContent=m;$('fErr').hidden=false}
+$('fProp').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const v=vals();
+  if(!v.nmg) return formErr('חייב שם ל־MG');
+  if(!!v.n603!==!!v.n703) return formErr('אם מציעים לאיוניקים, צריך שם לשניהם (או להשאיר את שניהם ריקים)');
+  if(findDup()) return checkDup();
+  $('fSubmit').disabled=true;
+  const args={p603:v.n603,p703:v.n703,pmg:v.nmg,pidea:v.idea};
+  const {data,error}=editing?await sb.rpc('edit',{pid:editing.id,...args}):await sb.rpc('propose',args);
+  $('fSubmit').disabled=false;
+  if(error) return formErr(errMsg(error));
+  $('dForm').close();
+  if(data.dup){toast('כבר הציעו בדיוק את זה, אפשר להצביע לה');S.flash=data.dup;await load();return}
+  S.flash=data.id; toast(editing?'נשמר':'נשלח! 🎈'); announce(); await load();
+});
+
+/* ---------- views ---------- */
+$('bAdmin').onclick=()=>{location.hash='admin'};
+$('bBoard').onclick=()=>{location.hash=''};
+function route(){
+  S.view=(location.hash==='#admin'&&S.isAdmin)?'admin':'board';
+  $('vBoard').hidden=S.view!=='board';
+  $('vAdmin').hidden=S.view!=='admin';
+  $('cars').hidden=S.view==='admin';
+  document.querySelector('.hero').hidden=S.view==='admin';
+  render();
+  if(S.view==='admin') loadAdmin();
+  window.scrollTo(0,0);
+}
+
+/* ---------- admin ---------- */
+async function loadAdmin(){
+  const {data,error}=await sb.rpc('admin_board');
+  if(error){$('vAdmin').innerHTML=`<p class="err">${esc(errMsg(error))}</p>`;return}
+  const props=data.proposals.map(p=>({...p,t:new Date(p.created_at).getTime(),likes:p.likers.length,boos:p.booers.length}));
+  const ranked=[...props].sort((a,b)=>net(b)-net(a)||b.likes-a.likes||a.t-b.t);
+  const who=l=>l.length?l.map(x=>esc(x.name||x.email)).join(', '):'—';
+  const line=p=>`<div class="names-line">${CARS.map(c=>p[c.k]?`<span class="${c.c}">${esc(p[c.k])}</span>`:'').filter(Boolean).join(' · ')}${!p.n603?' <span class="small muted">(רק MG)</span>':''}</div>`;
+  const voters=new Set(props.flatMap(p=>[...p.likers,...p.booers].map(x=>x.email)));
+  $('vAdmin').innerHTML=`
+    <h2>מסך ניהול</h2>
+    <p class="small muted">${deadlineText()}</p>
+    <div class="stats">
+      <div class="stat"><b>${props.length}</b><span>הצעות</span></div>
+      <div class="stat"><b>${voters.size}</b><span>הצביעו</span></div>
+      <div class="stat"><b>${data.visitors.length}</b><span>נכנסו</span></div>
+    </div>
+    <div class="panel"><h3>חמשת המקומות הראשונים</h3>
+      ${ranked.length?`<ol class="top5">${ranked.slice(0,5).map(p=>`<li>${line(p)}
+        ${p.idea?`<div class="small muted">${esc(p.idea)}</div>`:''}
+        <div class="small">ציון <b>${net(p)>0?'+':''}${net(p)}</b> · 👍 ${p.likes} · 👎 ${p.boos} · הציע/ה: ${esc(p.author_name||p.author_email)}</div></li>`).join('')}</ol>`:'<p class="muted">אין עדיין הצעות</p>'}
+      <p class="small muted" style="margin-top:8px">הדירוג: לייקים פחות בוזים. בשוויון, יותר לייקים, ואחר כך מי שהוצעה קודם.</p>
+    </div>
+    <div class="panel"><h3>כל ההצעות</h3>
+      ${ranked.map(p=>`<div class="aprop">${line(p)}
+        ${p.idea?`<div class="small">💡 ${esc(p.idea)}</div>`:''}
+        <div class="meta">הציע/ה: <b>${esc(p.author_name||'')}</b> ${esc(p.author_email||'')} · ${fmtDate(p.created_at)}${p.updated_at?' · תוקנה':''}</div>
+        <div class="who"><b class="l">👍 ${p.likes}:</b> ${who(p.likers)}</div>
+        <div class="who"><b class="x">👎 ${p.boos}:</b> ${who(p.booers)}</div>
+        <button class="danger small" style="margin-top:8px;padding:4px 12px" data-adel="${p.id}">למחוק</button>
+      </div>`).join('')||'<p class="muted">אין עדיין הצעות</p>'}
+    </div>
+    <div class="panel"><h3>מי נכנס (${data.total_visits} כניסות)</h3>
+      <table><thead><tr><th>שם</th><th>כניסות</th><th>אחרונה</th></tr></thead><tbody>
+      ${data.visitors.map(v=>`<tr><td>${esc(v.name||'')}<div class="small muted">${esc(v.email||'')}</div></td><td class="n">${v.count}</td><td>${fmtDate(v.last)}</td></tr>`).join('')}
+      </tbody></table>
+    </div>`;
+  $('vAdmin').querySelectorAll('[data-adel]').forEach(b=>b.onclick=()=>removeProp(+b.dataset.adel));
+}
+</script>
+</body>
+</html>

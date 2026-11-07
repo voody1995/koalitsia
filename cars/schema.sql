@@ -13,8 +13,9 @@ create table if not exists car_names.settings (
   id        int primary key default 1 check (id = 1),
   deadline  timestamptz not null
 );
--- Monday 9.11.2026 at 12:00 Israel time
-insert into car_names.settings (id, deadline) values (1, '2026-11-09 12:00:00+02') on conflict (id) do nothing;
+-- Saturday 7.11.2026 at 23:59 Israel time. Running this file again resets the deadline to this value.
+insert into car_names.settings (id, deadline) values (1, '2026-11-07 23:59:00+02')
+  on conflict (id) do update set deadline = excluded.deadline;
 
 create table if not exists car_names.admins (email text primary key);
 insert into car_names.admins (email) values ('doronimrod@gmail.com') on conflict do nothing;

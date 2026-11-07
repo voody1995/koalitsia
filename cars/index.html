@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="איך נקרא להם? 🚗🚗🚗">
-<meta property="og:description" content="מציעים שמות לשלושת הרכבים, מצביעים ומחליטים ביחד. ההצבעה נסגרת ביום שני 9.11 ב־12:00.">
+<meta property="og:description" content="מציעים שמות לשלושת הרכבים, מצביעים ומחליטים ביחד. ההצבעה נסגרת ביום שבת 7.11 ב־23:59.">
 <meta name="theme-color" content="#BFE0FF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Secular+One&display=swap">
@@ -268,7 +268,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9א-ת]/g,'').replace(/[ךםןףץ]/g,c=>'כמנפצ'['ךםןףץ'.indexOf(c)]);
 const keyOf=p=>[p.n603,p.n703,p.nmg].map(norm).join('|');
 
-const S={user:null,props:[],deadline:new Date('2026-11-09T12:00:00+02:00'),off:0,isAdmin:false,view:'board',loaded:false,flash:null};
+const S={user:null,props:[],deadline:new Date('2026-11-07T23:59:00+02:00'),off:0,isAdmin:false,view:'board',loaded:false,flash:null};
 const now=()=>Date.now()+S.off;
 const closed=()=>now()>=S.deadline.getTime();
 

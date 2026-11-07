@@ -19,6 +19,6 @@
 2. Authentication → URL Configuration → Redirect URLs → להוסיף `https://voody1995.github.io/koalitsia/cars/`
 
 ## שינויים נפוצים
-- להזיז את מועד הסגירה: `update car_names.settings set deadline = '2026-11-09 12:00:00+02';`
+- להזיז את מועד הסגירה: `update car_names.settings set deadline = '2026-11-07 23:59:00+02';`
 - להוסיף מנהל: `insert into car_names.admins values ('someone@gmail.com');`
 - מסך ניהול: כפתור "ניהול" למעלה (מופיע רק למנהלים), או `#admin` בסוף הכתובת.
